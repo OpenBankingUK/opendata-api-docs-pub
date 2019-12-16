@@ -1,4 +1,4 @@
-# ATM API Specification <!-- omit in toc -->
+# ATM Locator API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
 2. [Overview](#overview)
@@ -88,13 +88,13 @@ The intention is that this will better ensure consistency. This guide should be 
 
 The format that we use in this document for field value assignment is:-
 
-[] enclose a set of field values.
+- `[]` enclose a set of field values.
 
-Where there are multiple records for a particular field, we depict this as '[<record 1 value1>,<record 1 value2> …<recordn valuen>]', whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]'
+Where there are multiple records for a particular field, we depict this as `[<record 1 value1>, <record 1 value2>…<recordn valuen>]`, whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as `[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]`
 
-, separates individual field values within a field value set.
+- , separates individual field values within a field value set.
 
-" surrounds a text or date field value.
+- " surrounds a text or date field value.
 
 ### Implementation Notes
 

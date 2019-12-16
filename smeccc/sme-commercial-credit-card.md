@@ -250,9 +250,11 @@ The intention is that this will better ensure consistency. This guide should be 
 
 The format that is used in this document for field value assignment is:-
 
-[] enclose a set of field values. Where there are multiple records for a particular field, I depict this as '[<record 1 value1>, <record 1 value2>…<recordn valuen>]', whilst where I’m showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]' separates individual field values within a field value set.
+- `[]` enclose a set of field values. Where there are multiple records for a particular field, I depict this as `[<record 1 value1>, <record 1 value2>…<recordn valuen>]`, whilst where I’m showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as `[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]` 
+  
+- , separates individual field values within a field value set.
 
-'' surrounds a text or date field value.
+- '' surrounds a text or date field value.
 
 We are choosing different accounts based on how fully they test each section of the design.
 

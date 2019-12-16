@@ -252,24 +252,24 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[bca.2.4.0.DD.xlsx](/assets/bca/bca.2.4.0.dd.xlsx)
+[bca.2.4.0.DD.xlsx](/opendata-api-docs/assets/bca/bca.2.4.0.dd.xlsx)
 
 ### Swagger
 The API specification has been written using the Swagger API specification format.
 
-[bca.2.4.0.swagger.json](/assets/bca/bca.2.4.0.swagger.json)
+[bca.2.4.0.swagger.json](/opendata-api-docs/assets/bca/bca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[bca.2.3.0.Constraints.xlsx](/assets/bca/bca.2.3.bca.2.3.0.constraints.xlsx)
+[bca.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/bca/bca.2.3.bca.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[bca.2.3.0.CodeLists.xlsx](/assets/bca/bca.2.3.0.codelists.xlsx)
+[bca.2.3.0.CodeLists.xlsx](/opendata-api-docs/assets/bca/bca.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 

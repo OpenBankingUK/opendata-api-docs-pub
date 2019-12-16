@@ -1,4 +1,11 @@
-# Open Data Product Specifications version v2.4.0
+# Open Data Specifications version v2.4.0 <!-- omit in toc -->
+
+1. [Branch Locator](#branch-locator)
+2. [ATM Locator](#atm-locator)
+3. [Business Current Account](#business-current-account)
+4. [Personal Current Account](#personal-current-account)
+5. [SME Loan](#sme-loan)
+6. [SME Commercial Credit Card](#sme-commercial-credit-card)
 
 ## [Branch Locator](branchlocator/branch-locator.md)
 
@@ -16,7 +23,6 @@ A branch is made up of:-
 * Service/Facility (see subsection below)
 * Accessibility (see subsection below)
 * Postal Address (see subsection below)
-
 
 ## [ATM Locator](atmlocator/atm-locator.md)
 
@@ -79,6 +85,3 @@ This endpoint can contain multiple brands owned by a particular banking group. E
 This specification includes all relevant artefacts for the Open Data Business SME Commercial Credit Cards (CCC) API Specification.
 Currently, price comparison websites have to obtain their CCC product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third party providers to provide applications that could target particular SME markets.
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Commercial Credit Card products.
-
-
-

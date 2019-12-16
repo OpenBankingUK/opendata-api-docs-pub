@@ -167,25 +167,25 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[smel.2.3.0.DD.xlsx](/assets/smeloan/smel.2.3.0.DD.xlsx)
+[smel.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.DD.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[smel.2.3.0.swagger.json](/assets/smeloan/smel.2.3.0.swagger.json)
+[smel.2.3.0.swagger.json](/opendata-api-docs/assets/smeloan/smel.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[smel.2.3.0.Constraints.xlsx](/assets/smeloan/smel.2.3.0.Constraints.xlsx)
+[smel.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.Constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[smel.2.3.0.codelists.xlsx ](/assets/smeloan/smel.2.3.0.codelists.xlsx)
+[smel.2.3.0.codelists.xlsx ](/opendata-api-docs/assets/smeloan/smel.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 

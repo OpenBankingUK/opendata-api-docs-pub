@@ -257,7 +257,7 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[pca.2.4.0.DD.xlsx](/assets/pca/pca.2.4.0.DD.xlsx)
+[pca.2.4.0.DD.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.DD.xlsx)
 
 ### Swagger
 
@@ -269,13 +269,13 @@ The API specification has beenwritten using the Swagger API specification format
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[pca.2.4.0.Constraints.xlsx](/assets/pca/pca.2.4.0.Constraints.xlsx)
+[pca.2.4.0.Constraints.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.Constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[pca.2.4.0.CodeLists.xlsx](/assets/pca/pca.2.4.0.CodeLists.xlsx)
+[pca.2.4.0.CodeLists.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.CodeLists.xlsx)
 
 ## Message Implementation Guide
 

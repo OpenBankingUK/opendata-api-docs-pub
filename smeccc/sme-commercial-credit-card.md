@@ -220,25 +220,25 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[ccc.2.3.0.DD.xlsx](/assets/smeccc/ccc.2.3.0.DD.xlsx)
+[ccc.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.DD.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[ccc.2.3.0.swagger.json](/assets/smeccc/ccc.2.3.0.swagger.json)
+[ccc.2.3.0.swagger.json](/opendata-api-docs/assets/smeccc/ccc.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[ccc.2.3.0.Constraints.xlsx](/assets/smeccc/ccc.2.3.0.constraints.xlsx)
+[ccc.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[ccc.2.3.0.codelists.xlsx](/assets/smeccc/ccc.2.3.0.codelists.xlsx)
+[ccc.2.3.0.codelists.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 

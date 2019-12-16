@@ -68,13 +68,13 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed description for each fields in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[atml.2.3.0.tabbeddd.xlsx](/assets/atmlocator/atml.2.3.0.tabbeddd.xlsx)
+[atml.2.3.0.tabbeddd.xlsx](/opendata-api-docs/assets/atmlocator/atml.2.3.0.tabbeddd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[atml.2.3.0.swagger.json](/assets/atmlocator//atml.2.3.0.swagger.json)
+[atml.2.3.0.swagger.json](/opendata-api-docs/assets/atmlocator//atml.2.3.0.swagger.json)
 
 ## Message Implementation Guide
 

@@ -77,13 +77,13 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[bral.2.3.0.TabbedDD.xlsx](/assets/branchlocator/bral.2.3.0.dd.xlsx )
+[bral.2.3.0.TabbedDD.xlsx](/opendata-api-docs/assets/branchlocator/bral.2.3.0.dd.xlsx )
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[bral.2.3.0.swagger.json](/assets/branchlocator/bral.2.3.0.swagger.json )
+[bral.2.3.0.swagger.json](/opendata-api-docs/assets/branchlocator/bral.2.3.0.swagger.json )
 
 ## Branches v2.3 Top Level Design
 

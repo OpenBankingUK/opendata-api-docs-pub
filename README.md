@@ -1,10 +1,11 @@
-# Open Data Product Specifications version v3.1.4
+# Open Data Product Specifications version v2.4.0
 
 ## Branch Locator
 
 This specification includes all relevant artefacts for the Open Data Branch API Specification.
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple branches. 
 A branch is made up of:-
+
 * Identification - unique identification for the branch
 * SequenceNumber - 0 indicates that this is a main branch, 1..n indicates that it's either a sub or mobile branch.
 * Name - the branch name

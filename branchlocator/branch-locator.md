@@ -1,4 +1,4 @@
-# Branch Locator API Specification V2.4.0
+# Branch Locator API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
 2. [Overview](#overview)
@@ -18,7 +18,6 @@
       1. [Response](#response)
    3. [Branch Sample implementation Lloyds Bank Barnstable Mobile Branch](#branch-sample-implementation-lloyds-bank-barnstable-mobile-branch)
       1. [Response](#response-1)
-
 
 ## Version Control
 
@@ -72,23 +71,23 @@ Deals with standard and non-standard e.g. seasonal opening days and times.
 
 The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.
 
-![ bral.2.3.0.ClassDiagram.png ]( ./images/bral.2.3.0.class-diagram.png )
+![bral.2.3.0.ClassDiagram.png]( ./images/bral.2.3.0.class-diagram.png )
 
 ### Data Dictionary
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-![ atml.2.3.0.TabbedDD.xlsx ]( ./files/atml.2.3.0.tabbeddd.xlsx )
+[atml.2.3.0.TabbedDD.xlsx](/assets/branchlocator/bral.2.3.0.dd.xlsx )
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-![ atml.2.3.0.swagger.json ]( ./files/atml.2.3.0.swagger.json )
+[atml.2.3.0.swagger.json](/assets/branchlocator/bral.2.3.0.swagger.json )
 
 ## Branches v2.3 Top Level Design
 
-![ BranchLocationImplementationpage.png ]( ./images/branch-location-lmplementationpage.png )
+![BranchLocationImplementationpage.png](./images/branch-location-lmplementationpage.png)
 
 ## Usage Examples
 
@@ -129,10 +128,10 @@ Content-Type: application/prs.openbanking.opendata.v2.2
               "CustomerSegment": [
                 "Personal",
                 "Business"
-              ],
+             ],
               "Accessibility": [
                 "WheelchairAccess"
-              ],
+             ],
               "OtherServiceAndFacility": [
                 {
                   "Code": "ATMB",
@@ -142,7 +141,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                   "Code": "SCTY",
                   "Name": "SafeCustody"
                 }
-              ],
+             ],
               "Availability": {
                 "StandardAvailability": {
                   "Day": [
@@ -153,7 +152,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "09:00:00+0000",
                           "ClosingTime": "16:00:00+0000"
                         }
-                      ]
+                     ]
                     },
                     {
                       "Name": "Tuesday",
@@ -162,7 +161,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "09:00:00+0000",
                           "ClosingTime": "16:00:00+0000"
                         }
-                      ]
+                     ]
                     },
                     {
                       "Name": "Wednesday",
@@ -171,7 +170,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "09:30:00+0000",
                           "ClosingTime": "16:00:00+0000"
                         }
-                      ]
+                     ]
                     },
                     {
                       "Name": "Thursday",
@@ -180,7 +179,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "09:00:00+0000",
                           "ClosingTime": "16:00:00+0000"
                         }
-                      ]
+                     ]
                     },
                     {
                       "Name": "Friday",
@@ -189,7 +188,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "09:00:00+0000",
                           "ClosingTime": "16:00:00+0000"
                         }
-                      ]
+                     ]
                     },
                     {
                       "Name": "Saturday",
@@ -198,9 +197,9 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "09:00:00+0000",
                           "ClosingTime": "13:00:00+0000"
                         }
-                      ]
+                     ]
                     }
-                  ]
+                 ]
                 }
               },
               "ContactInfo": [
@@ -212,15 +211,15 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                   "ContactType": "Fax",
                   "ContactContent": "+44-1245704705"
                 }
-              ],
+             ],
               "PostalAddress": {
                 "AddressLine": [
                   "LLOYDS BRANCH 8 NORTH STREET"
-                ],
+               ],
                 "TownName": "BOURNE",
                 "CountrySubDivision": [
                   "LINCOLNSHIRE"
-                ],
+               ],
                 "Country": "GB",
                 "PostCode": "PE10 9ED",
                 "GeoLocation": {
@@ -231,11 +230,11 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                 }
               }
             }
-          ]
+         ]
         }
-      ]
+     ]
     }
-  ]
+ ]
 }
 ``` 
 
@@ -265,7 +264,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
               "CustomerSegment": [
                 "Personal",
                 "Business"
-              ],
+             ],
               "Availability": {
                 "StandardAvailability": {
                   "Day": [
@@ -276,9 +275,9 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                           "OpeningTime": "13:00:00+0000",
                           "ClosingTime": "15:00:00+0000"
                         }
-                      ]
+                     ]
                     }
-                  ]
+                 ]
                 }
               },
               "ContactInfo": [
@@ -286,12 +285,12 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                   "ContactType": "Phone",
                   "ContactContent": "+44-3453000000"
                 }
-              ],
+             ],
               "PostalAddress": {
                 "AddressLine": [
                   "Combe Martin",
                   "Coach Car Park adjacent to The Pack of Cards"
-                ],
+               ],
                 "Country": "GB",
                 "PostCode": "EX34 0ET",
                 "GeoLocation": {
@@ -302,10 +301,10 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                 }
               }
             }
-          ]
+         ]
         }
-      ]
+     ]
     }
-  ]
+ ]
 }
 ```

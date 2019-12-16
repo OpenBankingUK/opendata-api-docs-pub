@@ -1,4 +1,4 @@
-# BCA API Specification
+# BCA API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
 2. [Overview](#overview)
@@ -21,24 +21,25 @@
 6. [Implementation Notes](#implementation-notes)
 7. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Publish “Startup” or “Switching” incentives**](#publish-startup-or-switching-incentives)
-         1. [Response](#response)
-      2. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
-         1. [Response](#response-1)
-      3. [Represent a Business Overdraft Fees](#represent-a-business-overdraft-fees)
-         1. [Response](#response-2)
-      4. [Represent an Introductory Offer](#represent-an-introductory-offer)
-         1. [Response](#response-3)
-      5. [Show Whole Credit Interest Rates](#show-whole-credit-interest-rates)
-         1. [Response](#response-4)
-      6. [Restrict Who Can Apply for the Account](#restrict-who-can-apply-for-the-account)
-         1. [Response](#response-5)
-      7. [Benefits Packages](#benefits-packages)
-         1. [Response](#response-6)
-      8. [Tariffs and “Other Fees And Charges”](#tariffs-and-other-fees-and-charges)
-         1. [Response](#response-7)
-      9. [Publishing Back Book Product](#publishing-back-book-product)
-         1. [Response](#response-8)
+      1. [Request](#request)
+   2. [Publish “Startup” or “Switching” incentives](#publish-startup-or-switching-incentives)
+      1. [Response](#response)
+   3. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
+      1. [Response](#response-1)
+   4. [Represent a Business Overdraft Fees](#represent-a-business-overdraft-fees)
+      1. [Response](#response-2)
+   5. [Represent an Introductory Offer](#represent-an-introductory-offer)
+      1. [Response](#response-3)
+   6. [Show Whole Credit Interest Rates](#show-whole-credit-interest-rates)
+      1. [Response](#response-4)
+   7. [Restrict Who Can Apply for the Account](#restrict-who-can-apply-for-the-account)
+      1. [Response](#response-5)
+   8. [Benefits Packages](#benefits-packages)
+      1. [Response](#response-6)
+   9. [Tariffs and “Other Fees And Charges”](#tariffs-and-other-fees-and-charges)
+      1. [Response](#response-7)
+   10. [Publishing Back Book Product](#publishing-back-book-product)
+      1. [Response](#response-8)
 
 
 ## Version Control
@@ -62,38 +63,40 @@ This endpoint can contain multiple brands owned by a particular banking group. E
 
 This section covers BCA attributes that will change only under rare circumstances (see CoreProduct section for additional attributes that will be updated regularly).
 The following information can be provided:-
+
 * Product Name i.e. the name marketed to the consumers.
 * Identification is the unique id created by the financial institution to internally define the product.
 * Segment - allows specification of the type of product e.g. basic, regular and premium.
 
-![ segment-bca.png ]( ./images/segment-bca.png )
+![segment-bca.png](./images/segment-bca.png)
 
 Amendments for Back Book Products:
 
 * OnSaleIndicator - A new field to indicate whether a published product is an OnSale product ("1") or Back Book Product ("0"). By default, this field will have value "1" (OnSale Product).
 * Segment - The enumeration list for Segment will be enhanced to include the back book related segments. Also, the segment field has been set to an optional field. A new constraint rule (C44) will be added in the Constraint Rule book stating, that Segment is mandatory for OnSale Product.
 
-
 The following extra fields have been added to facilitate the Back Book publishing. A new constraint rule (C45 : This field is only relevant to Back Book Products) has been added into Constraint Rule book stating:-
+
 * FeeFreeLength - The length/duration of the fee-free period.
 * FeeFreeLengthPeriod - The unit of the period (days, weeks, months etc.) of the promotional length.
 * Notes.
 
-![ bca-producdetails1.png ]( ./images/bca-producdetails1.png )
+![bca-producdetails1.png](./images/bca-producdetails1.png)
 
 Constraints are published in the Data Dictionary along with the applicable fields.
 
 Example: How to publish OnSale Product
 
-![ bca-onsalepublish-example.png ]( ./images/bca-onsalepublish-example.png )
+![bca-onsalepublish-example.png](./images/bca-onsalepublish-example.png)
 
 Example: How to publish BackBook Product
 
-![ bca-backbook-publishexample.png ]( ./images/bca-backbook-publishexample.png )
+![bca-backbook-publishexample.png](./images/bca-backbook-publishexample.png)
 
 ### MarketingState
 
 Within our design, we have a concept of a "marketing state" for the product. This concept is required for any "On Sale" BCA product because:-
+
 * The BCA may provide a different offering to the account holder the longer that they hold a particular BCA - covered by StateTenureLength and StateTenurePeriod in the example below.
 * The financial institution can change any of the BCA attributes that are marketed over time - covered by FirstMarketedDate and LastMarketedDate in the example below.
 
@@ -128,7 +131,6 @@ And on the 17th of July, the marketing states will look like this:-
 | CR1 |CP2 |Regular |1/1/2017 |31/12/9999 | | |After the 2nd promotional period has expired, the account holder will be moved to the regular interest rate. |
 | CP3 | |Promotional |17/7/2017 |31/12/9999 |9 |Month |When an account holder opens the BCA, they will receive an initial promotional offer lasting 9 months. Attached to this, will be the revised initial promotional offer interest rate information. |
 
-
 **Notes:** 
 
 * PredecessorID is used to sequence the creditinterest states offered to the customer when they take out the BCA, it does not record change history.
@@ -139,7 +141,7 @@ And on the 17th of July, the marketing states will look like this:-
 
 Amendments for Back Book Products:
 
-![ bca-marketingstate.png ]( ./images/bca-marketingstate.png )
+![bca-marketingstate.png](./images/bca-marketingstate.png)
 
 There is no change in the structure of the Marketing State section for Back Book Product. The identification field is mandatory for both OnSale and Back Book Products. In a scenario where the Identification field is not required for referential check in the Product Account Info API, then Bank's can publish any meaningless data in this field. MarketingState can be Promotional or Regular for both OnSale and Back Book Products. All other fields are optional in this section for Back Book.
 
@@ -153,7 +155,7 @@ This section includes information that can change frequently. Information to be 
 * Servicing Access Channels cover all of the channels by which a customer can receive service for their BCA. Note: This covers servicing of all aspects of the BCA. Some aspects may not be serviceable via certain channels.
 * MonthlyCharge covers any monthly servicing charge that a financial institution may make to a BCA account holder
 
-![ bca-coreproduct-classdiagram.png ]( ./images/bca-coreproduct-classdiagram.png )
+![bca-coreproduct-classdiagram.png](./images/bca-coreproduct-classdiagram.png)
 
 Amendments for Back Book Products:
 
@@ -170,7 +172,7 @@ Field MonthlyCharge is optional for BackBook Product. Constraint C46 has been as
 
 Two new constraints C49 (This field is mandatory for OnSale Product)and C46 (This field is not needed for BackBook Product) have been added in the Constraints Rule book. These constraints have been assigned to individual fields in the CoreProduct section to identify which are mandatory for OnSale Products and which are not needed for BackBook Product.
 
-![ bca-coreproducts.png ]( ./images/bca-coreproducts.png )
+![bca-coreproducts.png](./images/bca-coreproducts.png)
 
 ### Credit Interest
 
@@ -180,7 +182,7 @@ Another feature of interest rates is that certain BCA products will pay more att
 
 This section has, therefore, been designed to allow the implementer to provide whole and tiered interest rates.
 
-![ bca-creditInterest-classdiagram.png ]( ./images/bca-creditInterest-classdiagram.png )
+![bca-creditInterest-classdiagram.png](./images/bca-creditInterest-classdiagram.png)
 
 Amendments for Back Book Products:
 
@@ -194,13 +196,13 @@ This section allows information to be provided about the "whole" and "tiered" ov
 * Fees for exceeding an agreed credit limit.
 * Fees where payments are returned due to there being no agreed credit facility available.
 
-![ bca-overdraft-classdiagram.png ]( ./images/bca-overdraft-classdiagram.png )
+![bca-overdraft-classdiagram.png](./images/bca-overdraft-classdiagram.png)
 
 Amendments for Back Book Products:
 
 Under Overdraft section, field TcsAndCsURL is not needed for Back Book products. Constraint C46 will be added against this field. Under section OverdraftTierBandSet, field MinimumArrangedOverdraftAmount will be applicable for both OnSale and BackBook products. Currently, this field is not present in the Product Info API specification.
 
-![ bca-overdraft.png ]( ./images/bca-overdraft.png )
+![bca-overdraft.png](./images/bca-overdraft.png)
 
 ### Eligibility
 
@@ -210,7 +212,7 @@ Amendments for Back Book Products:
 
 Eligibility section is not required for Back Book Products. Constraint C47 and C48 will be used for this purpose. Eligibility section will be made optional. A constraint C48 (This section is mandatory for OnSale Product) have been added in Constraints Rule book.
 
-![ bca.2.2.1.eligibility-classdiagram.png ]( ./images/bca.2.2.1.eligibility-classdiagram.png )
+![bca.2.2.1.eligibility-classdiagram.png](./images/bca.2.2.1.eligibility-classdiagram.png)
 
 ### Features and Benefits
 
@@ -223,9 +225,9 @@ Amendments for Back Book Products:
 
 Features and Benefits section is not required for Back Book Products. Constraint C47 will be used for this purpose. Features and Benefits section will be made optional to allow BackBook publishing. Constraint C48 will be applied to this section.
 
-![ bca-features-benefits.png ]( ./images/bca-features-benefits.png )
+![bca-features-benefits.png](./images/bca-features-benefits.png)
 
-### Other Fees and Charges 
+### Other Fees and Charges
 
 Key Fees and Charges that a customer has to pay can be specified in the Core Product,  Overdraft/Borrowing and Features and Benefits sections (see above).
 
@@ -237,37 +239,37 @@ Amendments for Back Book Products:
 
 Other Fees and Charges section is needed for both OnSale and BackBook Products. For certain Back Book product, Other Fees and Charges (mainly Servicing Charge) might be not easily available or not relevant. Hence this section has been made optional with the condition C48 (This section is mandatory for OnSale Product).The structure of the CodeList file (enumeration list) will be amended to clearly identify which code(s) are applicable to OnSale, BackBook or Both products. A new column "Applicable to" with values "On Sale", "Both" or "BackBook" will be added in the Code List XLS.
 
-![ bca.2.2.1.otherfeescharges-classdiagram ]( ./images/bca.2.2.1.otherfeescharges-classdiagram.png )
+![bca.2.2.1.otherfeescharges-classdiagram](./images/bca.2.2.1.otherfeescharges-classdiagram.png)
 
 ## Specification
 
 The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.
 
-![ bca-classdiagram.png ]( ./images/bca-classdiagram.png)
+![bca-classdiagram.png](./images/bca-classdiagram.png)
 
 
 ### Data Dictionary
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-![bca.2.4.0.DD.xlsx](./files/bca.2.4.0.dd.xlsx)
+[bca.2.4.0.DD.xlsx](/assets/bca/bca.2.4.0.dd.xlsx)
 
 ### Swagger
 The API specification has been written using the Swagger API specification format.
 
-![bca.2.4.0.swagger.json](./files/bca.2.4.0.swagger.json)
+[bca.2.4.0.swagger.json](/assets/bca/bca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-![bca.2.3.0.Constraints.xlsx ](./files/bca.2.3.0.constraints.xlsx)
+[bca.2.3.0.Constraints.xlsx](/assets/bca/bca.2.3.bca.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-![bca.2.3.0.CodeLists.xlsx ](./files/bca.2.3.0.codelists.xlsx)
+[bca.2.3.0.CodeLists.xlsx](/assets/bca/bca.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -286,7 +288,7 @@ OtherFeesAndCharges isn’t covered by the use cases due to these currently bein
 The format that we use in this document for field value assignment is:-
 [] enclose a set of field values.
 
-Where there are multiple records for a particular field, we depict this as ['<record 1 value1>','< record 1 value2>';…'<recordn valuen>'], whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as ['<record1 value1>'],['<record 2 value 1>'],['<record 3 value 3>']
+Where there are multiple records for a particular field, we depict this as '[<record 1 value1>,<record 1 value2>…<recordn valuen>]', whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]'
 , separates individual field values within a field value set.
 “ surrounds a text or date field value.
 

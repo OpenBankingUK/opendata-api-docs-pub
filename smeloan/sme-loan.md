@@ -1,4 +1,42 @@
-# SME Loan API Specification 
+# SME Loan API Specification <!-- omit in toc -->
+
+1. [Version Control](#version-control)
+2. [Overview](#overview)
+3. [Loan](#loan)
+   1. [MarketingState](#marketingstate)
+   2. [Core Product](#core-product)
+   3. [Loan Interest](#loan-interest)
+   4. [Loan Repayment](#loan-repayment)
+   5. [Eligibility](#eligibility)
+   6. [Features and Benefits](#features-and-benefits)
+   7. [Other Fees and Charges](#other-fees-and-charges)
+4. [Specification](#specification)
+   1. [Data Dictionary](#data-dictionary)
+   2. [Swagger](#swagger)
+   3. [Constraints Rule Book](#constraints-rule-book)
+   4. [CodeList](#codelist)
+5. [Message Implementation Guide](#message-implementation-guide)
+   1. [Purpose](#purpose)
+   2. [Format Notation](#format-notation)
+   3. [Implementation Notes](#implementation-notes)
+6. [SME Loan v2.2 Top Level Design](#sme-loan-v22-top-level-design)
+7. [Usage Examples](#usage-examples)
+   1. [Common Request for Usage Examples](#common-request-for-usage-examples)
+      1. [Request](#request)
+   2. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
+      1. [Response](#response)
+   3. [Publish Whole Interest Tier With an Arrangement Fee](#publish-whole-interest-tier-with-an-arrangement-fee)
+      1. [Response](#response-1)
+   4. [Publish Tiered APR and Tiered Arrangement Fee](#publish-tiered-apr-and-tiered-arrangement-fee)
+      1. [Response](#response-2)
+   5. [Early Payments or Overpay the Loan](#early-payments-or-overpay-the-loan)
+      1. [Response](#response-3)
+   6. [Early Repayment of Loan](#early-repayment-of-loan)
+      1. [Response](#response-4)
+   7. [Restrict Eligibility - Who Can Apply for the Account](#restrict-eligibility---who-can-apply-for-the-account)
+      1. [Response](#response-5)
+   8. [Other Fees And Charges](#other-fees-and-charges)
+      1. [Response](#response-6)
 
 ## Version Control
 
@@ -123,31 +161,31 @@ The long tail of additional fees and charges that are not associated to either o
 ## Specification
 
 The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.
-![ smel.2.2.0.ClassDiagram.png ]( ./images/smel.2.2.0.class-diagram.png )
+![smel.2.2.0.ClassDiagram.png ](./images/smel.2.2.0.class-diagram.png)
 
 ### Data Dictionary
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-![ smel.2.3.0.DD.xlsx ]( ./files/smel.2.3.0.DD.xlsx )
+[smel.2.3.0.DD.xlsx](/assets/smeloan/smel.2.3.0.DD.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-![ smel.2.3.0.swagger.json ]( ./files/smel.2.3.0.swagger.json )
+[smel.2.3.0.swagger.json](/assets/smeloan/smel.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-![ smel.2.3.0.Constraints.xlsx ]( ./files/smel.2.3.0.Constraints.xlsx )
+[smel.2.3.0.Constraints.xlsx](/assets/smeloan/smel.2.3.0.Constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-![ smel.2.3.0.codelists.xlsx ]( ./files/smel.2.3.0.codelists.xlsx )
+[smel.2.3.0.codelists.xlsx ](/assets/smeloan/smel.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -164,7 +202,7 @@ The format that we use in this document for field value assignment is:-
 
 [] enclose a set of field values.
 
-Where there are multiple records for a particular field, we depict this as ['<record 1 value1>','< record 1 value2>'…'<recordn valuen>'], whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as ['<record1 value1>'],['<record 2 value >'],['<record 3 value 3>']
+Where there are multiple records for a particular field, we depict this as '[<record 1 value1>,< record 1 value2>…<recordn valuen>]', whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value >],[<record 3 value 3>]'
 
 , separates individual field values within a field value set.
 
@@ -179,7 +217,7 @@ Currently, price comparison websites have to obtain their  SME Loan product data
 
 ## SME Loan v2.2 Top Level Design
 
-![ image2017-9-27_11-14-7.png ]( ./images/image2017-9-27_11-14-7.png )
+![ image2017-9-27_11-14-7.png ](./images/image2017-9-27_11-14-7.png)
 
 ## Usage Examples
 
@@ -263,7 +301,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -278,7 +316,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -293,7 +331,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -308,7 +346,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -330,7 +368,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -345,7 +383,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -360,7 +398,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -375,7 +413,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -390,7 +428,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -412,7 +450,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -427,7 +465,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br>  The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60.  The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -442,7 +480,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -457,7 +495,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br>  The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60.  The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -472,7 +510,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br>The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -494,7 +532,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br>The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -509,7 +547,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br>  The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60.  The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -524,7 +562,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -539,7 +577,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -554,7 +592,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -576,7 +614,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br>The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -591,7 +629,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -606,7 +644,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -621,7 +659,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           },
                           {
@@ -636,7 +674,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -1123,7 +1161,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -1145,7 +1183,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -1167,7 +1205,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -1189,7 +1227,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]
@@ -1211,7 +1249,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                             "LoanProviderInterestRateType": "LoanProviderBaseRate",
                             "LoanProviderInterestRate": "8.65",
                             "Notes": [
-                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. <br> The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
+                              "Representative example: 9.0%  APR based on an assumed unsecured loan amount of £8,000 with 60 monthly repayments of £164.71 at an annual interest rate of 8.65% (variable). Total amount payable £9,882.60. The representative APR is an illustration of the rate that the majority of customers will receive. If a loan is described as having a particular representative APR, then we expect to offer that rate or better to at least 51% of the applicants we accept. Other customers may get a different rate based on their individual circumstances. This figure is not necessarily the rate you will be receiving and is for illustrative purposes only."
                             ]
                           }
                         ]

@@ -1,4 +1,4 @@
-# Commercial Credit Card API Specification
+# Commercial Credit Card API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
 2. [Overview](#overview)
@@ -57,6 +57,7 @@ This endpoint can contain multiple brands owned by a particular banking group. E
 
 This section covers CCC attributes that will change only under rare circumstances (see CoreProduct section for additional attributes that will be updated regularly). 
 The following information can be provided:-
+
 * Product Name i.e. the name marketed to the consumers.
 * Identification is the unique id created by the financial institution to internally define the product
 * Segment – currently only ‘general’
@@ -101,8 +102,8 @@ The original marketing states can be shown as follows:-
 | CR1 |CP2 |Regular |1/1/2017 |31/12/9999 | | |After the promotional period has expired, the accountholder will be moved to the regular interest rate for both balance and purchases) |
 | CP3 | |Promotional |17/7/2017 |31/12/9999 |9 |Month |When an accountholder opens the CCC, they will receive an initial promotional offer lasting 9 months. Attached to this state will be the original initial promotional interest rate information. (0% Balance transfer rate, 2% Purchase rate) |
 
-
 **Notes:** 
+
 * PredecessorID is used to sequence the Balance and Purchase interest states offered to the customer when they take out the CCC, it does not record change history.
 * FirstMarketedDate and LastMarkedDate cover the period when the particular marketing state was advertised to the customer.
 * CMA9 Banks only have to provide information for current (and known future, if they wish) marketing states. There is no open data requirement to provide an audit history of all marketing states that ever applied to the CCC. When the future marketing state becomes the current marketing state, the original marketing state information no longer needs to be published.
@@ -117,7 +118,7 @@ This section includes information that can change relatively often. Information 
 * URL to the product's terms and conditions
 * Minimum and Maximum Credit Limits on the card
 * Maximum days of interest free credit on **purchases** when paid in full and on time each month
-* Sales Access Channels cover all of the channels by which a customer can be sold a CCC (e.g. Branch, Online )
+* Sales Access Channels cover all of the channels by which a customer can be sold a CCC (e.g. Branch, Online)
 * Servicing Access Channels cover all of the channels by which a customer can receive service for their CCC. Note: This covers servicing of all aspects of the CCC. Some aspects may not be serviceable via certain channels.
 * Card Scheme
 * Indicator to show if contactless capable
@@ -213,31 +214,31 @@ For a benefits group or for individual benefits, any eligibility criteria requir
 
 The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.
 
-![ ccc-class-diagram.png ]( ./images/ccc-class-diagram.png )
+![ccc-class-diagram.png](./images/ccc-class-diagram.png)
 
 ### Data Dictionary
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-![ ccc.2.3.0.DD.xlsx ]( files/ccc.2.3.0.DD.xlsx )
+[ccc.2.3.0.DD.xlsx](/assets/smeccc/ccc.2.3.0.DD.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-![ ccc.2.3.0.swagger.json ]( files/ccc.2.3.0.swagger.json )
+[ccc.2.3.0.swagger.json](/assets/smeccc/ccc.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-![ ccc.2.3.0.Constraints.xlsx ]( files/ccc.2.3.0.constraints.xlsx )
+[ccc.2.3.0.Constraints.xlsx](/assets/smeccc/ccc.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-![ ccc.2.3.0.codelists.xlsx ]( files/ccc.2.3.0.codelists.xlsx )
+[ccc.2.3.0.codelists.xlsx](/assets/smeccc/ccc.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -249,7 +250,7 @@ The intention is that this will better ensure consistency. This guide should be 
 
 The format that is used in this document for field value assignment is:-
 
-[] enclose a set of field values. Where there are multiple records for a particular field, I depict this as ['<record 1 value1>', '<record 1 value2>' …'<recordn valuen>'], whilst where I’m showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as ['<record1 value1>'],['<record 2 value 1>'],['<record 3 value 3>'], separates individual field values within a field value set.
+[] enclose a set of field values. Where there are multiple records for a particular field, I depict this as '[<record 1 value1>, <record 1 value2>…<recordn valuen>]', whilst where I’m showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]' separates individual field values within a field value set.
 
 '' surrounds a text or date field value.
 
@@ -263,7 +264,7 @@ Currently, price comparison websites have to obtain their  CCC product data eith
 
 ### CCC Top Level Design
 
-![ top-level-smeccc-design.png ]( ./images/top-level-smeccc-design.png )
+![top-level-smeccc-design.png]( ./images/top-level-smeccc-design.png)
 
 ## Usage Examples
 

@@ -1,4 +1,4 @@
-# PCA API Specification
+# PCA API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
 2. [Overview](#overview)
@@ -76,20 +76,21 @@ Currently, price comparison websites have to obtain their PCA product data eithe
 
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple PCA products.
 
-
 ## PCA
 
 This section covers PCA attributes that will change only under rare circumstances (see Core Product section below for additional attributes that will be updated regularly). In this section, the following information can be provided:-
+
 * Product Name i.e. the name marketed to the consumers.
 * Identification is the unique id created by the financial institution to internally define the product
 * Segment - allows specification of the type of product e.g. basic, regular, premium
 
-![ PCAProductClassDiagram.png ]( ./images/pca-product-classdiagram.png )
+![PCAProductClassDiagram.png](./images/pca-product-classdiagram.png)
 Amendments for Back Book Products:
+
 * OnSaleIndicator - A new field to indicate whether published product is an OnSale product ("1") or Back Book Product ("0"). By default, this field will have value "1" (OnSale Product).
 * Segment - The enumeration list for the Segment will be enhanced to include the back book related segments. Also the Segment field have been made an optional field. A new constraint rule (C38) will be added in the Constraint Rule book stating thesegment is mandatory for On Sale Product.
 
-![ pca-producdetails.png ]( ./images/pca-producdetails.png )
+![pca-producdetails.png](./images/pca-producdetails.png)
 
 ### MarketingState
 
@@ -98,7 +99,7 @@ Within our design, we have a concept of a "marketing state" for the product. Thi
 * The PCA may provide a different offering to the account holder the longer that they hold a particular PCA
 * The bank can change any of the PCA attributes over time.
 
-![ pca-marketingstate-classdiagram.png ]( ./images/pca-marketingstate-classdiagram.png )
+![pca-marketingstate-classdiagram.png](./images/pca-marketingstate-classdiagram.png)
 
 This is illustrated below with a complex example.
 A CMA9 Bank has a PCA product that was first advertised on 1/1/2017 and has the following features currently:-
@@ -140,7 +141,7 @@ And On the 17th July, the marketing states will look like this:-
 
 Amendments for Back Book Products:
 
-![ pca-marketingstate.png ]( ./images/pca-marketingstate.png )
+![pca-marketingstate.png](./images/pca-marketingstate.png)
 
 There is no change in the Structure of the MarketingState section for Back Book Products. The Identification field is mandatory for both OnSale and Back Book Products. In a scenario where the identification field is not required for a referential check in the Product Account Info API, then Banks can publish any meaning less data in this field. MarketingState can be Promotional or Regular for both OnSale and Back Book Products. All other fields are optional in this section for Back Book.
 
@@ -154,7 +155,7 @@ This section includes information that can change relatively often. Information 
 * Servicing Access Channels cover all of the channels by which a customer can receive service for their PCA. Note: This covers servicing of all aspects of the PCA. Some aspects may not be serviceable via certain channels.
 * MonthlyMaximumCharge (MMC) is a measure of the maximum amount that a consumer may be charged per month, when they exceed their agreed credit limit. There is currently a strict definition of which charges fall into this category, with grey areas such as "EmergencyBorrowing" potentially being in scope. The CMA9 have to calculate an MMC for each PCA product by August 2017, and provide the details as to how they calculate this.
 
-![ pca-core-product-classdiagram.png ]( ./images/pca-core-product-classdiagram.png )
+![pca-core-product-classdiagram.png](./images/pca-core-product-classdiagram.png)
 
 Amendments for Back Book Products:
 
@@ -170,7 +171,7 @@ The following fields in CoreProduct will be made optional:-
   
 Two new constraints C39 (This field is mandatory for OnSale Product) and C40 (This field is not needed for BackBook Products) have been added in the Constraints Rule book. These constraints have been assigned to individual fields in the CoreProduct section to identify which are mandatory for OnSale Products and which are not needed for BackBook Products. MonthlyMaximumCharge is required for Back Book products as well.
 
-![ pca-core-products.png ]( ./images/pca-core-products.png )
+![pca-core-products.png](./images/pca-core-products.png)
 
 
 ### Credit Interest
@@ -183,7 +184,7 @@ This section has been designed to allow the implementer to provide whole or tier
 
 Currently, most PCA price comparison websites focus on the promotional or regular interest rate (where there is no promotion) as their main mechanism for providing a comparison of PCA products.
 
-![ pca-creditInterest-classdiagram.png ]( ./images/pca-creditInterest-classdiagram.png )
+![pca-creditInterest-classdiagram.png](./images/pca-creditInterest-classdiagram.png)
 
 Amendments for Back Book Products:
 
@@ -198,13 +199,13 @@ As such, this section has been named 'Overdraft/Borrowing' so as to cover situat
 
 Details relating toany capping (i.e. maximum amount that can be charged to a customer for a particular period) for any fee/charge can also be specified.
 
-![ pca-overdraft-classdiagram.png ]( ./images/pca-overdraft-classdiagram.png )
+![pca-overdraft-classdiagram.png](./images/pca-overdraft-classdiagram.png)
 
 Amendments for Back Book Products:
 
 Under the Overdraft section, field TcsAndCsURL is not needed for Back Book products. Constraint C40 will be added against this field. Under section OverdraftTierBandSet, field MinimumArrangedOverdraftAmount will be applicable for both OnSale and BackBook products. Currently this field in not present in the Product Info API specification.
 
-![ pca-overdraft.png ]( ./images/pca-overdraft.png )
+![pca-overdraft.png](./images/pca-overdraft.png)
 
 
 ### Eligibility
@@ -216,7 +217,7 @@ Amendments for Back Book Products:
 
 The Eligibility section is not required for Back Book Products. Constraint C41 and C42 will be used for this purpose. The Eligibility section will be made optional. A constraint C42 (This section is mandatory for on sale products) has been added in the Constraint Rule book.
 
-![ pca-eligibility-classdiagram.png ]( ./images/pca-eligibility-classdiagram.png )
+![pca-eligibility-classdiagram.png](./images/pca-eligibility-classdiagram.png)
 
 ### Features and Benefits
 
@@ -230,7 +231,7 @@ Amendments for Back Book Products:
 
 The Features and Benefits section is not required for Back Book Products. Constraint C41 will be used for this purpose. The Features and Benefits section will be made optional to allow back book product publishing. Constraints C41 and C42 (This section is mandatory for OnSale products) will be applied on this section.
 
-![ pca-features-benefits-classdiagram.png ]( ./images/pca-features-benefits-classdiagram.png )
+![pca-features-benefits-classdiagram.png](./images/pca-features-benefits-classdiagram.png)
 
 ### Other Fees and Charges 
 
@@ -243,40 +244,38 @@ Amendments for Back Book Products:
 
 Other Fees and Charges section is needed for both OnSale and BackBook Products. For certain Back Book product, Other Fees and Charges (mainly Servicing Charge) might be not easily available or not relevant. Hence this section has been made optional with condition C42 (This section is mandatory for On Sale Products). The structure of the CodeList file (enumeration list) will be amended to clearly identify which code(s) are applicable to OnSale, BackBook or Both products. A new column "Applicable to" with values "On Sale", "Both" or "BackBook" will be added in the Code List XLS.
 
-![ pca-other-feecharges-classdiagram.png ]( ./images/pca-other-feecharges-classdiagram.png )
-
+![pca-other-feecharges-classdiagram.png](./images/pca-other-feecharges-classdiagram.png)
 
 ## Specification
 
-
 The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.
 
-![ pca-class-diagram.png ]( ./images/pca-class-diagram.png )
+![pca-class-diagram.png](./images/pca-class-diagram.png)
 
 
 ### Data Dictionary
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-![pca.2.4.0.DD.xlsx](./files/pca.2.4.0.DD.xlsx)
+[pca.2.4.0.DD.xlsx](/assets/pca/pca.2.4.0.DD.xlsx)
 
 ### Swagger
 
 The API specification has beenwritten using the Swagger API specification format.
 
-![pca.2.4.0.swagger.json](./files/pca.2.4.0.swagger.json)
+[pca.2.4.0.swagger.json](./assets/pca/pca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-![pca.2.4.0.Constraints.xlsx](./files/pca.2.4.0.Constraints.xlsx )
+[pca.2.4.0.Constraints.xlsx](/assets/pca/pca.2.4.0.Constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-![pca.2.4.0.CodeLists.xlsx](./files/pca.2.4.0.CodeLists.xlsx)
+[pca.2.4.0.CodeLists.xlsx](/assets/pca/pca.2.4.0.CodeLists.xlsx)
 
 ## Message Implementation Guide
 
@@ -301,7 +300,7 @@ OtherFeesAndCharges isn’t covered by the use cases due to these currently bein
 The format that we use in this document for field value assignment is:-
 [] enclose a set of field values.
 
-Where there are multiple records for a particular field, we depict this as ['<record 1 value1>','< record 1 value2>'…'<recordn valuen>'], whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as ['<record1 value1>'],['<record 2 value 1>'],['<record 3 value 3>']
+Where there are multiple records for a particular field, we depict this as '[<record 1 value1>,< record 1 value2>…<recordn valuen>]', whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]'
 
 , separates individual field values within a field value set.
 
@@ -309,25 +308,24 @@ Where there are multiple records for a particular field, we depict this as ['<re
 
 ### Implementation Notes
 
-Before implementing the message standard, it is very useful browsing price comparison websites (e.g. [https://www.moneysupermarket.com/current-accounts/](https://www.moneysupermarket.com/current-accounts/), [https://www.comparethemarket.com/current-accounts/](https://www.comparethemarket.com/current-accounts/) ) to understand how the implementation of our standard by the CMA9 banks would help to betterfacilitate the provision of information used on those sites.
+Before implementing the message standard, it is very useful browsing price comparison websites (e.g. [https://www.moneysupermarket.com/current-accounts/](https://www.moneysupermarket.com/current-accounts/), [https://www.comparethemarket.com/current-accounts/](https://www.comparethemarket.com/current-accounts/)) to understand how the implementation of our standard by the CMA9 banks would help to betterfacilitate the provision of information used on those sites.
 
 Currently, price comparison websites have to obtain their PCA product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third-party providers to provide applications that could target particular consumer markets.
 
 ### PCA v2.0 Top Level Design
 
-![ image2017-9-25_17-19-43.png ]( ./images/image2017-9-25_17-19-43.png )
-<br>
+![image2017-9-25_17-19-43.png](./images/image2017-9-25_17-19-43.png)
 
 ***Handling accounts marketed differently according to residency***
 
  **Example** : [Royal Bank of Scotland current accounts](http://personal.rbs.co.uk/personal/current-accounts/location.html)
 
  **Scotland :-**
-![ image2017-9-27_13-53-37.png ]( ./images/image2017-9-27_13-53-37.png )
+![image2017-9-27_13-53-37.png](./images/image2017-9-27_13-53-37.png)
  
  **England and Wales:-** 
 
-![ image2017-9-27_13-54-15.png ]( ./images/image2017-9-27_13-54-15.png )
+![image2017-9-27_13-54-15.png](./images/image2017-9-27_13-54-15.png)
 
 In the examples, RBS market what may well be almost the same product using distinctly different names in Scotland than in England and Wales.
 
@@ -4702,7 +4700,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Represent an overdraft “buffer amount”** 
 
-![ image2017-9-25_12-15-35.png ]( ./images/image2017-9-25_12-15-35.png )
+![image2017-9-25_12-15-35.png](./images/image2017-9-25_12-15-35.png)
 
 
 The diagram above represents the different “credit states” that a PCA can be in, for a sophisticated PCA product – [Barclay’s current account](http://www.barclays.co.uk/current-accounts/bank-charges/) . 

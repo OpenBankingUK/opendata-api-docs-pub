@@ -1,4 +1,4 @@
-# ATM API Specification
+# ATM API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
 2. [Overview](#overview)
@@ -47,7 +47,7 @@ An ATM consists of:-
   
 * Location - This is where the ATM is located and is a mix of a postal address and the geographic coordinates (decimal Latitude and Longitude). Postal address information can either be:-
    
-   i) Up to 7 lines of unstructured address information (AddressLine ) 
+   i) Up to 7 lines of unstructured address information (AddressLine) 
    
    ii) Structured address information e.g. BuildingNumber, StreetName, Town, PostCode etc or a mixture of both. 
    
@@ -61,20 +61,20 @@ An ATM consists of:-
 
 The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.
 
-![ atml.2.2.0.classdiagram.png ]( ./images/atml.2.2.0.classdiagram.png )
+![atml.2.2.0.classdiagram.png](./images/atml.2.2.0.classdiagram.png)
 
 
 ### Data Dictionary
 
 Provides detailed description for each fields in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-![atml.2.3.0.tabbeddd.xlsx](./files/atml.2.3.0.tabbeddd.xlsx )
+[atml.2.3.0.tabbeddd.xlsx](/assets/atmlocator/atml.2.3.0.tabbeddd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-![ atml.2.3.0.swagger.json ]( ./files/atml.2.3.0.swagger.json )
+[atml.2.3.0.swagger.json](/assets/atmlocator//atml.2.3.0.swagger.json)
 
 ## Message Implementation Guide
 
@@ -90,7 +90,7 @@ The format that we use in this document for field value assignment is:-
 
 [] enclose a set of field values.
 
-Where there are multiple records for a particular field, we depict this as ['<record 1 value1>','<record 1 value2>' …'<recordn valuen>'], whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as ['<record1 value1>'],['<record 2 value 1>'],['<record 3 value 3>']
+Where there are multiple records for a particular field, we depict this as '[<record 1 value1>,<record 1 value2> …<recordn valuen>]', whilst where we are showing that there is 1 field value in 1 record, and another field value in a 2nd record, I depict this as '[<record1 value1>],[<record 2 value 1>],[<record 3 value 3>]'
 
 , separates individual field values within a field value set.
 
@@ -102,7 +102,7 @@ Before implementing the message standard, it is useful browsing current ATM Loca
 
 ## ATM v2.3 Top Level Design
 
-![ atmlocatortopteveldesign.png ]( ./images/atmlocatortopteveldesign.png )
+![atmlocatortopteveldesign.png]( ./images/atmlocatortopteveldesign.png)
 
 ## Usage Examples
 
@@ -145,7 +145,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                 "fr",
                 "es",
                 "de"
-              ],
+             ],
               "ATMServices": [
                 "CashWithdrawal",
                 "PINChange",
@@ -153,10 +153,10 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                 "Balance",
                 "MiniStatement",
                 "CharityDonation"
-              ],
+             ],
               "SupportedCurrencies": [
                 "GBP"
-              ],
+             ],
               "MinimumPossibleAmount": "5",
               "Branch": {
                 "Identification": "402529"
@@ -179,11 +179,11 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                 }
               }
             }
-          ]
+         ]
         }
-      ]
+     ]
     }
-  ]
+ ]
 }
 ``` 
  

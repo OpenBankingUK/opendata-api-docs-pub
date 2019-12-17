@@ -220,13 +220,13 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[ccc.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.DD.xlsx)
+[ccc.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.dd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[ccc.2.3.0.swagger.json](/opendata-api-docs/assets/smeccc/ccc.2.3.0.swagger.json)
+[ccc.2.3.0.swagger.json](/opendata-api-docs/smeccc/files/ccc.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
@@ -658,7 +658,7 @@ Content-Type: application/prs.openbanking.opendata.v2.4
 
 ### Restrict Account Applicants
 
-**Example** : A fictional example based on theSantander Business Credit Card
+**Example** : A fictional example based on the [Santander Business Credit Card](https://www.santander.co.uk/business/borrowing-and-finance/credit-cards)
 
 You can apply for a credit card if:-
 

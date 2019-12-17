@@ -167,19 +167,19 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[smel.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.DD.xlsx)
+[smel.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.dd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[smel.2.3.0.swagger.json](/opendata-api-docs/assets/smeloan/smel.2.3.0.swagger.json)
+[smel.2.3.0.swagger.json](/opendata-api-docs/smeloan/files/smel.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[smel.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.Constraints.xlsx)
+[smel.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.constraints.xlsx)
 
 ### CodeList
 
@@ -900,7 +900,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Publish Whole Interest Tier With an Arrangement Fee 
 
-Example: <a href="http://www.business.hsbc.uk/en-gb/finance-and-borrowing/credit-and-lending/small-business-loan" class="external-link" rel="nofollow">HSBC Small Business Loan</a>
+Example: [HSBC Small Business Loan](http://www.business.hsbc.uk/en-gb/finance-and-borrowing/credit-and-lending/small-business-loan)
 
 7.4 fixed Representative APR, on a loan of value between £1000 to £25000, with £100 arrangement fee collected up-front.
  
@@ -1586,7 +1586,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 Made-up example on top of RBS Business Loan
 
-[https://www.business.rbs.co.uk/business/business-lending-at-royal-bank/applying-online-sole-trader.html](https://www.business.rbs.co.uk/business/business-lending-at-royal-bank/applying-online-sole-trader.html)
+[RBS Small Business Loan](https://www.business.rbs.co.uk/business/loans-and-finance/small-business-loan.html)
 
 
 Eligibility requirements

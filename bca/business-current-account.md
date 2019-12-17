@@ -257,13 +257,13 @@ Provides detailed descriptions for each field in the message specification along
 ### Swagger
 The API specification has been written using the Swagger API specification format.
 
-[bca.2.4.0.swagger.json](/opendata-api-docs/assets/bca/bca.2.4.0.swagger.json)
+[bca.2.4.0.swagger.json](/opendata-api-docs/bca/files/bca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[bca.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/bca/bca.2.3.bca.2.3.0.constraints.xlsx)
+[bca.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/bca/bca.2.3.0.constraints.xlsx)
 
 ### CodeList
 

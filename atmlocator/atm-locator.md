@@ -13,7 +13,7 @@
 6. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
       1. [Request](#request)
-   2. [ATM Sample implementation – HSBC bank ATM at DE7 8DD](#atm-sample-implementation--hsbc-bank-atm-at-de7-8dd)
+   2. [Sample implementation HSBC Bank ATM at DE78DD](#sample-implementation-hsbc-bank-atm-at-de78dd)
       1. [Response](#response)
 
 ## Version Control
@@ -74,7 +74,7 @@ Provides detailed description for each fields in the message specification along
 
 The API specification written using the Swagger API specification format.
 
-[atml.2.3.0.swagger.json](/opendata-api-docs/assets/atmlocator//atml.2.3.0.swagger.json)
+[atml.2.3.0.swagger.json](/opendata-api-docs/atmlocator/files/atml.2.3.0.swagger.json)
 
 ## Message Implementation Guide
 
@@ -119,7 +119,7 @@ GET /atms HTTP/1.1
 Accept: application/json
 ```
 
-### ATM Sample implementation – HSBC bank ATM at DE7 8DD
+### Sample implementation HSBC Bank ATM at DE78DD
 
 #### Response
 

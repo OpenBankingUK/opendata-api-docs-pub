@@ -83,7 +83,7 @@ Provides detailed descriptions for each field in the message specification along
 
 The API specification written using the Swagger API specification format.
 
-[bral.2.3.0.swagger.json](/opendata-api-docs/assets/branchlocator/bral.2.3.0.swagger.json )
+[bral.2.3.0.swagger.json](/opendata-api-docs/branchlocator/files/bral.2.3.0.swagger.json )
 
 ## Branches v2.3 Top Level Design
 

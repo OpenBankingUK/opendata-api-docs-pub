@@ -6,7 +6,7 @@
    1. [MarketingState](#marketingstate)
    2. [Core Product](#core-product)
    3. [Credit Interest](#credit-interest)
-   4. [Overdraft/Borrowing](#overdraftborrowing)
+   4. [Overdraft Or Borrowing](#overdraft-or-borrowing)
    5. [Eligibility](#eligibility)
    6. [Features and Benefits](#features-and-benefits)
    7. [Other Fees and Charges](#other-fees-and-charges)
@@ -21,14 +21,14 @@
 6. [Implementation Notes](#implementation-notes)
 7. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-   2. [Publish “Startup” or “Switching” incentives](#publish-startup-or-switching-incentives)
+   2. [Publish Startup or Switching incentives](#publish-startup-or-switching-incentives)
    3. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
    4. [Represent a Business Overdraft Fees](#represent-a-business-overdraft-fees)
    5. [Represent an Introductory Offer](#represent-an-introductory-offer)
    6. [Show Whole Credit Interest Rates](#show-whole-credit-interest-rates)
    7. [Restrict Who Can Apply for the Account](#restrict-who-can-apply-for-the-account)
    8. [Benefits Packages](#benefits-packages)
-   9. [Tariffs and “Other Fees And Charges”](#tariffs-and-other-fees-and-charges)
+   9. [Tariffs and Other Fees And Charges](#tariffs-and-other-fees-and-charges)
    10. [Publishing Back Book Product](#publishing-back-book-product)
 
 
@@ -178,7 +178,7 @@ Amendments for Back Book Products:
 
 CreditInterestEligibility section is not required for Back Book Products. Constraint C47 will be used for this purpose.
 
-### Overdraft/Borrowing
+### Overdraft Or Borrowing
 
 This section allows information to be provided about the "whole" and "tiered" overdrafts as well as any overdraft/borrowing related fees/charges. Common borrowing charges include:-
 

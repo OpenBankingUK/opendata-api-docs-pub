@@ -9,7 +9,7 @@
    1. [Purpose](#purpose)
    2. [Format Notation](#format-notation)
    3. [Implementation Notes](#implementation-notes)
-5. [ATM v2.3 Top Level Design](#atm-v23-top-level-design)
+5. [ATM Top Level Design](#atm-top-level-design)
 6. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
    2. [Sample implementation HSBC Bank ATM at DE78DD](#sample-implementation-hsbc-bank-atm-at-de78dd)
@@ -98,7 +98,7 @@ Where there are multiple records for a particular field, we depict this as `[<re
 
 Before implementing the message standard, it is useful browsing current ATM Locator websites e.g. [Link ATM Locator](http://www.link.co.uk/atm-locator/), [Visa ATM Locator](http://www.visa.com/atmlocator/index.jsp) and [Mastercard](https://www.mastercard.us/en-us/consumers/get-support/locate-an-atm.html) , along with the ATM Locator webpages provided by your own organisation, in order to get a feel as to why you need to supply this information.
 
-## ATM v2.3 Top Level Design
+## ATM Top Level Design
 
 ![atmlocatortopteveldesign.png]( ./images/atmlocatortopteveldesign.png)
 

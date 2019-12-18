@@ -6,7 +6,7 @@
    1. [MarketingState](#marketingstate)
    2. [Core Product](#core-product)
    3. [Credit Interest](#credit-interest)
-   4. [Overdraft/Borrowing](#overdraftborrowing)
+   4. [Overdraft or Borrowing](#overdraft-or-borrowing)
    5. [Eligibility](#eligibility)
    6. [Features and Benefits](#features-and-benefits)
    7. [Other Fees and Charges](#other-fees-and-charges)
@@ -19,7 +19,7 @@
    1. [Purpose](#purpose)
    2. [Format Notation](#format-notation)
    3. [Implementation Notes](#implementation-notes)
-   4. [PCA v2.0 Top Level Design](#pca-v20-top-level-design)
+   4. [PCA Top Level Design](#pca-top-level-design)
 6. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
    2. [Publish Switching or Account Opening incentives](#publish-switching-or-account-opening-incentives)
@@ -34,7 +34,7 @@
       1. [Represent unauthorised borrowing fees](#represent-unauthorised-borrowing-fees)
       2. [Represent overdrafts with rate like fees](#represent-overdrafts-with-rate-like-fees)
       3. [Represent an overdraft: buffer amount](#represent-an-overdraft-buffer-amount)
-      4. [Represent “overdraft control” accounts](#represent-overdraft-control-accounts)
+      4. [Represent overdraft control accounts](#represent-overdraft-control-accounts)
    11. [Restrict who can apply for the account](#restrict-who-can-apply-for-the-account)
    12. [Benefits packages](#benefits-packages)
    13. [Publishing BackBook product](#publishing-backbook-product)
@@ -175,7 +175,7 @@ Amendments for Back Book Products:
 The CreditInterestEligibility section is not needed for Back Book Products. A new constraint C41 (This section is not needed for Back Book Products) will be added into the Constraints Rule Book. C41 will be applied for CreditInterestEligibility.
 
 
-### Overdraft/Borrowing
+### Overdraft or Borrowing
 
 The Maximum Monthly Charge (MMC) focuses on fees and charges due to unauthorised borrowing. Price comparison websites are currently more focussed on details of arranged overdraft rates and accompanying fees and charges. There is also grey areas e.g. emergency borrowing which is a short term provision for situations where a customer has exceeded their arranged overdraft or authorised credit limit but only by a small amount and only for a short period.
 
@@ -241,7 +241,7 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[pca.2.4.0.DD.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.DD.xlsx)
+[pca.2.4.0.dd.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.dd.xlsx)
 
 ### Swagger
 
@@ -253,13 +253,13 @@ The API specification has beenwritten using the Swagger API specification format
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[pca.2.4.0.Constraints.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.constraints.xlsx)
+[pca.2.4.0.constraints.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[pca.2.4.0.CodeLists.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.CodeLists.xlsx)
+[pca.2.4.0.codelists.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -296,7 +296,7 @@ Before implementing the message standard, it is very useful browsing price compa
 
 Currently, price comparison websites have to obtain their PCA product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third-party providers to provide applications that could target particular consumer markets.
 
-### PCA v2.0 Top Level Design
+### PCA Top Level Design
 
 ![image2017-9-25_17-19-43.png](./images/image2017-9-25_17-19-43.png)
 
@@ -4822,7 +4822,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 ``` 
  
 
-#### Represent “overdraft control” accounts
+#### Represent overdraft control accounts
 
 Examples: [Barclays Control Feature](https://www.barclays.co.uk/current-accounts/customise-my-account/control-feature/) with Barclays bank account with Emergency Borrowing.
 

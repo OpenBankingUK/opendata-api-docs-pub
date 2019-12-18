@@ -10,7 +10,7 @@
 3. [Specification](#specification)
    1. [Data Dictionary](#data-dictionary)
    2. [Swagger](#swagger)
-4. [Branches v2.3 Top Level Design](#branches-v23-top-level-design)
+4. [Branch Top Level Design](#branch-top-level-design)
 5. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
    2. [Branch Sample implementation Lloyds Bank physical branch](#branch-sample-implementation-lloyds-bank-physical-branch)
@@ -74,7 +74,7 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[bral.2.3.0.TabbedDD.xlsx](/opendata-api-docs/assets/branchlocator/bral.2.3.0.dd.xlsx )
+[bral.2.3.0.dd.xlsx](/opendata-api-docs/assets/branchlocator/bral.2.3.0.dd.xlsx )
 
 ### Swagger
 
@@ -82,7 +82,7 @@ The API specification written using the Swagger API specification format.
 
 [bral.2.3.0.swagger.json](/opendata-api-docs/assets/branchlocator//bral.2.3.0.swagger.json )
 
-## Branches v2.3 Top Level Design
+## Branch Top Level Design
 
 ![BranchLocationImplementationpage.png](./images/branch-location-lmplementationpage.png)
 

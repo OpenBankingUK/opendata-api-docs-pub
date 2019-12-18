@@ -7,7 +7,7 @@
 5. [SME Loan](#sme-loan)
 6. [SME Commercial Credit Card](#sme-commercial-credit-card)
 
-## [Branch Locator](branchlocator/branch-locator.md)
+## [Branch Locator](./branchlocator/branch-locator.md)
 
 This specification includes all relevant artefacts for the Open Data Branch API Specification.
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple branches. 
@@ -24,7 +24,7 @@ A branch is made up of:-
 * Accessibility (see subsection below)
 * Postal Address (see subsection below)
 
-## [ATM Locator](atmlocator/atm-locator.md)
+## [ATM Locator](./atmlocator/atm-locator.md)
 
 This specification includes all relevant artefacts for the Open Data ATM API Specification.
 
@@ -56,13 +56,13 @@ An ATM consists of:-
 * Minimum possible amount - This will inform a consumer as the minimum possible amount that they can withdraw from an ATM. Note: This is not the same as the minimum denomination. For example, an ATM may dispense £5 notes but require the consumer to withdraw a minimum possible amount of £10.
 
 
-## [Business Current Account](bca/business-current-account.md) 
+## [Business Current Account](./bca/business-current-account.md) 
 
 This specification includes all relevant artifacts for the Open Data Business Current Account (BCA) API Specification.
 Currently, price comparison websites have to obtain their BCA product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third-party providers to provide applications that could target particular consumer markets.
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple BCA products.
 
-## [Personal Current Account](pca/personal-current-account.md)
+## [Personal Current Account](./pca/personal-current-account.md)
 
 This specification includes all relevant artefacts for the Open Data Personal Current Account (PCA) API Specification.
 
@@ -71,7 +71,7 @@ Currently, price comparison websites have to obtain their PCA product data eithe
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple PCA products.
 
 
-## [SME Loan](smeloan/sme-loan.md)
+## [SME Loan](./smeloan/sme-loan.md)
 
 This specification includes all relevant artefacts for the Open Data Business SME Unsecured Loans (SME) API Specification.
 
@@ -80,7 +80,7 @@ Currently, price comparison websites have to obtain their SME Business Loan prod
 This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Unsecured Loan products.
 
 
-## [SME Commercial Credit Card](smeccc/sme-commercial-credit-card.md)
+## [SME Commercial Credit Card](./smeccc/sme-commercial-credit-card.md)
 
 This specification includes all relevant artefacts for the Open Data Business SME Commercial Credit Cards (CCC) API Specification.
 Currently, price comparison websites have to obtain their CCC product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third party providers to provide applications that could target particular SME markets.

@@ -21,25 +21,15 @@
 6. [Implementation Notes](#implementation-notes)
 7. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
    2. [Publish “Startup” or “Switching” incentives](#publish-startup-or-switching-incentives)
-      1. [Response](#response)
    3. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
-      1. [Response](#response-1)
    4. [Represent a Business Overdraft Fees](#represent-a-business-overdraft-fees)
-      1. [Response](#response-2)
    5. [Represent an Introductory Offer](#represent-an-introductory-offer)
-      1. [Response](#response-3)
    6. [Show Whole Credit Interest Rates](#show-whole-credit-interest-rates)
-      1. [Response](#response-4)
    7. [Restrict Who Can Apply for the Account](#restrict-who-can-apply-for-the-account)
-      1. [Response](#response-5)
    8. [Benefits Packages](#benefits-packages)
-      1. [Response](#response-6)
    9. [Tariffs and “Other Fees And Charges”](#tariffs-and-other-fees-and-charges)
-      1. [Response](#response-7)
    10. [Publishing Back Book Product](#publishing-back-book-product)
-      1. [Response](#response-8)
 
 
 ## Version Control
@@ -257,7 +247,7 @@ Provides detailed descriptions for each field in the message specification along
 ### Swagger
 The API specification has been written using the Swagger API specification format.
 
-[bca.2.4.0.swagger.json](/opendata-api-docs/bca/files/bca.2.4.0.swagger.json)
+[bca.2.4.0.swagger.json](/opendata-api-docs/assets/bca/bca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
@@ -308,20 +298,20 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```json
 GET /business-current-accounts HTTP/1.1
 ```
 
-### Publish “Startup” or “Switching” incentives
+### Publish Startup or Switching incentives
 
 **Example** : [HSBC Start-Up Account](http://www.business.hsbc.uk/en-gb/everyday-banking/business-accounts/business-bank-account-500k-start-up-uk?DCSext.nav=BusWiz)
 Free banking for 18 months when you start your business with HSBC.
 After your free business banking period, we'll give you a fixed price of £5.50 a month for 12 months.
 When your fixed price period ends, you’ll move onto the tariff that you choose when you open your account and you’ll pay an account maintenance fee of £5.50 per month plus charges depending on the services you use. 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1473,7 +1463,7 @@ For new businesses with a turnover up to £1 million, our Business Current Accou
 * Business support available by phone, in branch or through online guides
 
 
- #### Response
+ **Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1575,7 +1565,7 @@ This account is available for businesses with an anticipated turnover of up to �
 * Annual Overdraft Fee - 0.5% ( min £50.00)
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1984,7 +1974,7 @@ Small to medium sized businesses (turnover < £2.5m) in the first year of tradin
 2. Marketing state is only intended to cover the current and near term future changes in promotional and regular offers, which need to be presented to the customer when marketed. It is not intended to provide a historical change history.
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2162,7 +2152,7 @@ Lloyds [School Banking Account](http://business.bankofscotland.co.uk/1m-25m-turn
 * With CreditInterestEligibility criteria “£1 minimum balance”specified.
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2342,7 +2332,7 @@ We're the approved banking partner for the National Association of School Busine
 
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2528,7 +2518,7 @@ First £250 paid after 10 transactions
 
 Final £250 paid after 12 months banking, with minimum 120 transactions in a year
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2708,9 +2698,9 @@ Ltd co - business name &amp; directors are id checked."
 
 
 
-### Tariffs and “Other Fees And Charges”
+### Tariffs and Other Fees And Charges
 
- **Example** : [HSBC Business Current Account](http://www.business.hsbc.uk/en-gb/everyday-banking/business-accounts/start-up-business-bank-account)
+**Example** : [HSBC Business Current Account](http://www.business.hsbc.uk/en-gb/everyday-banking/business-accounts/start-up-business-bank-account)
 
 The CMA in their price comparison exercise(prior to OBIE being established) took the view that the following charges are key.
 
@@ -2728,7 +2718,7 @@ Where there are “per payment”, “per debit”, ”per withdrawal” or “p
 
 Some of the above and more can be seen in the JSON fragment from HSBC Start Up Account.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3396,7 +3386,7 @@ Overdraft
 * Annual Overdraft Fee - 0.5% ( min £50.00)
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

@@ -22,38 +22,22 @@
    4. [PCA v2.0 Top Level Design](#pca-v20-top-level-design)
 6. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
    2. [Publish Switching or Account Opening incentives](#publish-switching-or-account-opening-incentives)
-      1. [Response](#response)
    3. [Supply fixed and variable core product details](#supply-fixed-and-variable-core-product-details)
-      1. [Response](#response-1)
    4. [Represent an Introductory Offer](#represent-an-introductory-offer)
-      1. [Response](#response-2)
    5. [Show Tiered Credit Interest rates](#show-tiered-credit-interest-rates)
-      1. [Response](#response-3)
    6. [Show whole credit interest rates and relevant eligibility](#show-whole-credit-interest-rates-and-relevant-eligibility)
-      1. [Response](#response-4)
    7. [Represent graduate overdraft limits](#represent-graduate-overdraft-limits)
-      1. [Response](#response-5)
    8. [Represent overdrafts charged as tiered amount rates](#represent-overdrafts-charged-as-tiered-amount-rates)
-      1. [Response](#response-6)
    9. [Represent overdrafts charged as whole amount rates](#represent-overdrafts-charged-as-whole-amount-rates)
-      1. [Response](#response-7)
    10. [Represent overdrafts with periodic and per item fees with caps](#represent-overdrafts-with-periodic-and-per-item-fees-with-caps)
       1. [Represent unauthorised borrowing fees](#represent-unauthorised-borrowing-fees)
-         1. [Response](#response-8)
       2. [Represent overdrafts with rate like fees](#represent-overdrafts-with-rate-like-fees)
-         1. [Response](#response-9)
       3. [Represent an overdraft: buffer amount](#represent-an-overdraft-buffer-amount)
-         1. [Response](#response-10)
       4. [Represent “overdraft control” accounts](#represent-overdraft-control-accounts)
-         1. [Response](#response-11)
    11. [Restrict who can apply for the account](#restrict-who-can-apply-for-the-account)
-      1. [Response](#response-12)
    12. [Benefits packages](#benefits-packages)
-      1. [Response](#response-13)
    13. [Publishing BackBook product](#publishing-backbook-product)
-      1. [Response](#response-14)
 
 ## Version Control
 
@@ -263,7 +247,7 @@ Provides detailed descriptions for each field in the message specification along
 
 The API specification has beenwritten using the Swagger API specification format.
 
-[pca.2.4.0.swagger.json](/opendata-api-docs/pca/files/pca.2.4.0.swagger.json)
+[pca.2.4.0.swagger.json](/opendata-api-docs/assets/pca/pca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
@@ -338,7 +322,7 @@ The Usage Examples are representative of different functional scenarios and are 
 For simplicity, some of the mandatory JSON elements may be skipped to keep the size of the response manageable for this document, to highlight only on the relevant items. For example, when we are giving an example of CreditInterest, then we might not show Overdraft and other json elements, to keep the JSON response size manageable.
 
 ### Common Request for Usage Examples
-#### Request
+**Request**
 
 ```json
 GET /personal-current-accounts HTTP/1.1
@@ -358,7 +342,7 @@ In the Switching example above, the Overdraft section would be filled out and th
 
 Within the FeatureBenefit section, the FeatureBenefitGroup/Type will be set to “AccountOpeningOrSwitchingIncentive” and the FeatureBenefitEligibility/Type will be set to “Switchers Only”.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1007,7 +991,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 Example: Santander’s [123 MINI CURRENT ACCOUNT](http://www.santander.co.uk/uk/current-accounts/123-mini-accounts/123-mini-current-account) has two products with the same Core Product Details, for different age range of young people, one for Under 11, and other 11-17 years, with the latter product having additional FeaturesAndBenefits.
 
  
-#### Response
+**Response**
  
 ```
 HTTP/1.1 200 OK
@@ -2062,7 +2046,7 @@ Example: [Nationwide FlexDirect](http://www.nationwide.co.uk/products/current-ac
 
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2760,7 +2744,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 * 2.00% AER/1.98% gross (variable)on Balance of £200+
 * 3.00% AER/2.96% gross (variable)on Balance of £300 to £2,000
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3324,7 +3308,7 @@ Example - Bank of Scotland, Classic Vantage Account
 * Stay in credit (above £0) during the monthly billing period
 * Pay in at least two different Direct Debits from your account each calendar month
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3519,7 +3503,7 @@ If you’ve graduated within the last 3 years, you can apply for an overdraft of
 * 2nd year after graduation: Up to £2,000
 * 3rd year after graduation: Up to £1,000
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3966,7 +3950,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 * The appropriate daily fees can be supplied in the OverdraftFeesCharges section: The daily fee will be stated in OverdraftFeeChargeDetail/FeeAmount field, and OverdraftFeeChargeDetail/CalculationFrequency should be set to “Daily”.
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4156,7 +4140,7 @@ Fees for arranged overdrafts, 18.9% EAR variable.
 Representative example: If you use an arranged overdraft of £1,200 the interest rate we will charge you is 18.9% EAR (variable).
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4311,7 +4295,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 <u>Fee for a paid or unpaid transaction when you have insufficient funds</u>: £5 per transaction (capped at £15 per month)
 
 
-##### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4597,7 +4581,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 Arranged Overdraft Fee: 1p charged per day per £7 overdrawn 
 
-##### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4720,7 +4704,7 @@ Example: [Marks and Spencer Current Account Credit Overdraft Limits](https://ban
 * Above £100 - 15.9% variable.
 
 
-##### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4854,7 +4838,7 @@ If the Control Feature stops an unpaid transaction fee, you'll still be charged 
 
 To represent control features, ASPSPs must add a OverdraftControl type FeatureBenefitItem, in the FeaturesAndBenefits set.
 
-##### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -5130,7 +5114,7 @@ Eligibility requirements
 * Your residential address must be within the EU
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -5233,7 +5217,7 @@ Lifestyle benefits and Rewards. £12 a month.
 European travel insurance, mobile phone insurance, Rewards on 7 types of household bills paid by Direct Debit, ticket booking Service, tastecard, travel money    
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -5602,7 +5586,7 @@ Example - Bank of Scotland, Classic Vantage Account
 
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

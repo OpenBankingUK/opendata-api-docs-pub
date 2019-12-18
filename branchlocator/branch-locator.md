@@ -13,11 +13,8 @@
 4. [Branches v2.3 Top Level Design](#branches-v23-top-level-design)
 5. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
    2. [Branch Sample implementation Lloyds Bank physical branch](#branch-sample-implementation-lloyds-bank-physical-branch)
-      1. [Response](#response)
    3. [Branch Sample implementation Lloyds Bank Barnstable Mobile Branch](#branch-sample-implementation-lloyds-bank-barnstable-mobile-branch)
-      1. [Response](#response-1)
 
 ## Version Control
 
@@ -83,7 +80,7 @@ Provides detailed descriptions for each field in the message specification along
 
 The API specification written using the Swagger API specification format.
 
-[bral.2.3.0.swagger.json](/opendata-api-docs/branchlocator/files/bral.2.3.0.swagger.json )
+[bral.2.3.0.swagger.json](/opendata-api-docs/assets/branchlocator//bral.2.3.0.swagger.json )
 
 ## Branches v2.3 Top Level Design
 
@@ -96,7 +93,7 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```
 GET /branches HTTP/1.1
@@ -104,7 +101,7 @@ GET /branches HTTP/1.1
 
 ### Branch Sample implementation Lloyds Bank physical branch
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -240,7 +237,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Branch Sample implementation Lloyds Bank Barnstable Mobile Branch
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

@@ -4,8 +4,8 @@
 2. [Overview](#overview)
    1. [Postal Address](#postal-address)
    2. [Mobile branch addresses](#mobile-branch-addresses)
-   3. [Services and Facilities/Other Services and Facilities](#services-and-facilitiesother-services-and-facilities)
-   4. [Accessibility/Other Accessibility](#accessibilityother-accessibility)
+   3. [Services and Facilities and Other Services and Facilities](#services-and-facilities-and-other-services-and-facilities)
+   4. [Accessibility and Other Accessibility](#accessibility-and-other-accessibility)
    5. [Availability](#availability)
 3. [Specification](#specification)
    1. [Data Dictionary](#data-dictionary)
@@ -52,11 +52,11 @@ This is where the Branch is located and is a mixture of a postal address and the
 
 Mobile branch specific attributes such as parking location and stop name can be added as a 0..7 free format AddressLine fields
 
-### Services and Facilities/Other Services and Facilities
+### Services and Facilities and Other Services and Facilities
 
 This allows the implementer to choose from standard services/facilities e.g. Parking and also allows the specification of other services/facilties using the OtherServiceFacility code block, where these are proprietary or currently missing from the standard code list. Periodic review of OtherServiceFacility information provided by each bank will allow us to decide if any of that information should be subsequently added to the standard code list.
 
-### Accessibility/Other Accessibility
+### Accessibility and Other Accessibility
 
 This allows you to specify accessibility features of the branch e.g. Wheelchair access, and also allows specification of OtherAccessibility features, where these are proprietary or currently missing from the standard code list.
 

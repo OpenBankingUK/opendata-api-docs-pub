@@ -1557,7 +1557,7 @@ This account is available for businesses with an anticipated turnover of up to �
 
 ### Represent a Business Overdraft Fees
 
- **Example** : [Bank of Ireland (Northern Ireland](https://boini.bankofireland.com/fs/doc/wysiwyg/approved-omi012169-schedule-of-charges-march-2017-v5-nc.pdf)
+ **Example** : [Bank of Ireland (Northern Ireland](https://businessbanking.bankofireland.com/banking/current-account/business-current-account/fees/)
 
 * Lending Fees (including overdraft)
 * Lending Set-up Fee - 1% (min £100.00)
@@ -1965,7 +1965,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2+json
 
 ### Represent an Introductory Offer
 
-**Example:**  [Santander Business Current Account Start Up](http://www.santander.co.uk/uk/business/current-accounts/start-up-business-current-account)
+**Example:** [Santander Business Current Account Start Up](http://www.santander.co.uk/uk/business/current-accounts/start-up-business-current-account)
 
 Small to medium sized businesses (turnover < £2.5m) in the first year of trading, has up to two directors, owners (shareholders) or partners and this is its first Business Current Account with us,  **you could be eligible for 12 months free business banking.
 
@@ -2320,7 +2320,7 @@ We're the approved banking partner for the National Association of School Busine
 
 ###  Restrict Who Can Apply for the Account
 
-**Example: Santander Business Account 2Year Start Up** 
+**Example:** [Santander Business Account 2Year Start Up](https://www.santander.co.uk/business/current-accounts/business-current-account)
 
 **Eligibility requirements** 
 
@@ -3376,7 +3376,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2+json
 
 ### Publishing Back Book Product
 
- **Example** : [Bank of Ireland (Northern Ireland)](https://boini.bankofireland.com/fs/doc/wysiwyg/approved-omi012169-schedule-of-charges-march-2017-v5-nc.pdf)
+ **Example** : [Bank of Ireland (Northern Ireland)](https://businessbanking.bankofireland.com/banking/current-account/business-current-account/fees/)
 
 Overdraft
 

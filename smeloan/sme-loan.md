@@ -1,3 +1,6 @@
+---
+next: false
+---
 # SME Loan API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)

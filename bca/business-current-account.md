@@ -6,7 +6,7 @@
    1. [MarketingState](#marketingstate)
    2. [Core Product](#core-product)
    3. [Credit Interest](#credit-interest)
-   4. [Overdraft/Borrowing](#overdraftborrowing)
+   4. [Overdraft Or Borrowing](#overdraft-or-borrowing)
    5. [Eligibility](#eligibility)
    6. [Features and Benefits](#features-and-benefits)
    7. [Other Fees and Charges](#other-fees-and-charges)
@@ -21,25 +21,15 @@
 6. [Implementation Notes](#implementation-notes)
 7. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
-   2. [Publish “Startup” or “Switching” incentives](#publish-startup-or-switching-incentives)
-      1. [Response](#response)
+   2. [Publish Startup or Switching incentives](#publish-startup-or-switching-incentives)
    3. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
-      1. [Response](#response-1)
    4. [Represent a Business Overdraft Fees](#represent-a-business-overdraft-fees)
-      1. [Response](#response-2)
    5. [Represent an Introductory Offer](#represent-an-introductory-offer)
-      1. [Response](#response-3)
    6. [Show Whole Credit Interest Rates](#show-whole-credit-interest-rates)
-      1. [Response](#response-4)
    7. [Restrict Who Can Apply for the Account](#restrict-who-can-apply-for-the-account)
-      1. [Response](#response-5)
    8. [Benefits Packages](#benefits-packages)
-      1. [Response](#response-6)
-   9. [Tariffs and “Other Fees And Charges”](#tariffs-and-other-fees-and-charges)
-      1. [Response](#response-7)
+   9. [Tariffs and Other Fees And Charges](#tariffs-and-other-fees-and-charges)
    10. [Publishing Back Book Product](#publishing-back-book-product)
-      1. [Response](#response-8)
 
 
 ## Version Control
@@ -188,7 +178,7 @@ Amendments for Back Book Products:
 
 CreditInterestEligibility section is not required for Back Book Products. Constraint C47 will be used for this purpose.
 
-### Overdraft/Borrowing
+### Overdraft Or Borrowing
 
 This section allows information to be provided about the "whole" and "tiered" overdrafts as well as any overdraft/borrowing related fees/charges. Common borrowing charges include:-
 
@@ -252,24 +242,24 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[bca.2.4.0.DD.xlsx](/assets/bca/bca.2.4.0.dd.xlsx)
+[bca.2.4.0.dd.xlsx](/opendata-api-docs/assets/bca/bca.2.4.0.dd.xlsx)
 
 ### Swagger
 The API specification has been written using the Swagger API specification format.
 
-[bca.2.4.0.swagger.json](/assets/bca/bca.2.4.0.swagger.json)
+[bca.2.4.0.swagger.json](/opendata-api-docs/assets/bca/bca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[bca.2.3.0.Constraints.xlsx](/assets/bca/bca.2.3.bca.2.3.0.constraints.xlsx)
+[bca.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/bca/bca.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[bca.2.3.0.CodeLists.xlsx](/assets/bca/bca.2.3.0.codelists.xlsx)
+[bca.2.3.0.CodeLists.xlsx](/opendata-api-docs/assets/bca/bca.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -308,20 +298,20 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```json
 GET /business-current-accounts HTTP/1.1
 ```
 
-### Publish “Startup” or “Switching” incentives
+### Publish Startup or Switching incentives
 
 **Example** : [HSBC Start-Up Account](http://www.business.hsbc.uk/en-gb/everyday-banking/business-accounts/business-bank-account-500k-start-up-uk?DCSext.nav=BusWiz)
 Free banking for 18 months when you start your business with HSBC.
 After your free business banking period, we'll give you a fixed price of £5.50 a month for 12 months.
 When your fixed price period ends, you’ll move onto the tariff that you choose when you open your account and you’ll pay an account maintenance fee of £5.50 per month plus charges depending on the services you use. 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1473,7 +1463,7 @@ For new businesses with a turnover up to £1 million, our Business Current Accou
 * Business support available by phone, in branch or through online guides
 
 
- #### Response
+ **Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1567,7 +1557,7 @@ This account is available for businesses with an anticipated turnover of up to �
 
 ### Represent a Business Overdraft Fees
 
- **Example** : [Bank of Ireland (Northern Ireland](https://boini.bankofireland.com/fs/doc/wysiwyg/approved-omi012169-schedule-of-charges-march-2017-v5-nc.pdf)
+ **Example** : [Bank of Ireland (Northern Ireland](https://businessbanking.bankofireland.com/banking/current-account/business-current-account/fees/)
 
 * Lending Fees (including overdraft)
 * Lending Set-up Fee - 1% (min £100.00)
@@ -1575,7 +1565,7 @@ This account is available for businesses with an anticipated turnover of up to �
 * Annual Overdraft Fee - 0.5% ( min £50.00)
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1975,7 +1965,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2+json
 
 ### Represent an Introductory Offer
 
-**Example:**  [Santander Business Current Account Start Up](http://www.santander.co.uk/uk/business/current-accounts/start-up-business-current-account)
+**Example:** [Santander Business Current Account Start Up](http://www.santander.co.uk/uk/business/current-accounts/start-up-business-current-account)
 
 Small to medium sized businesses (turnover < £2.5m) in the first year of trading, has up to two directors, owners (shareholders) or partners and this is its first Business Current Account with us,  **you could be eligible for 12 months free business banking.
 
@@ -1984,7 +1974,7 @@ Small to medium sized businesses (turnover < £2.5m) in the first year of tradin
 2. Marketing state is only intended to cover the current and near term future changes in promotional and regular offers, which need to be presented to the customer when marketed. It is not intended to provide a historical change history.
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2162,7 +2152,7 @@ Lloyds [School Banking Account](http://business.bankofscotland.co.uk/1m-25m-turn
 * With CreditInterestEligibility criteria “£1 minimum balance”specified.
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2330,7 +2320,7 @@ We're the approved banking partner for the National Association of School Busine
 
 ###  Restrict Who Can Apply for the Account
 
-**Example: Santander Business Account 2Year Start Up** 
+**Example:** [Santander Business Account 2Year Start Up](https://www.santander.co.uk/business/current-accounts/business-current-account)
 
 **Eligibility requirements** 
 
@@ -2342,7 +2332,7 @@ We're the approved banking partner for the National Association of School Busine
 
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2528,7 +2518,7 @@ First £250 paid after 10 transactions
 
 Final £250 paid after 12 months banking, with minimum 120 transactions in a year
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2708,9 +2698,9 @@ Ltd co - business name &amp; directors are id checked."
 
 
 
-### Tariffs and “Other Fees And Charges”
+### Tariffs and Other Fees And Charges
 
- **Example** : [HSBC Business Current Account](http://www.business.hsbc.uk/en-gb/everyday-banking/business-accounts/start-up-business-bank-account)
+**Example** : [HSBC Business Current Account](http://www.business.hsbc.uk/en-gb/everyday-banking/business-accounts/start-up-business-bank-account)
 
 The CMA in their price comparison exercise(prior to OBIE being established) took the view that the following charges are key.
 
@@ -2728,7 +2718,7 @@ Where there are “per payment”, “per debit”, ”per withdrawal” or “p
 
 Some of the above and more can be seen in the JSON fragment from HSBC Start Up Account.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3386,7 +3376,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2+json
 
 ### Publishing Back Book Product
 
- **Example** : [Bank of Ireland (Northern Ireland)](https://boini.bankofireland.com/fs/doc/wysiwyg/approved-omi012169-schedule-of-charges-march-2017-v5-nc.pdf)
+ **Example** : [Bank of Ireland (Northern Ireland)](https://businessbanking.bankofireland.com/banking/current-account/business-current-account/fees/)
 
 Overdraft
 
@@ -3396,7 +3386,7 @@ Overdraft
 * Annual Overdraft Fee - 0.5% ( min £50.00)
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

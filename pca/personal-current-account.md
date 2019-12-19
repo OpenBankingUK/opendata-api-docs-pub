@@ -6,7 +6,7 @@
    1. [MarketingState](#marketingstate)
    2. [Core Product](#core-product)
    3. [Credit Interest](#credit-interest)
-   4. [Overdraft/Borrowing](#overdraftborrowing)
+   4. [Overdraft or Borrowing](#overdraft-or-borrowing)
    5. [Eligibility](#eligibility)
    6. [Features and Benefits](#features-and-benefits)
    7. [Other Fees and Charges](#other-fees-and-charges)
@@ -19,41 +19,25 @@
    1. [Purpose](#purpose)
    2. [Format Notation](#format-notation)
    3. [Implementation Notes](#implementation-notes)
-   4. [PCA v2.0 Top Level Design](#pca-v20-top-level-design)
+   4. [PCA Top Level Design](#pca-top-level-design)
 6. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
    2. [Publish Switching or Account Opening incentives](#publish-switching-or-account-opening-incentives)
-      1. [Response](#response)
    3. [Supply fixed and variable core product details](#supply-fixed-and-variable-core-product-details)
-      1. [Response](#response-1)
    4. [Represent an Introductory Offer](#represent-an-introductory-offer)
-      1. [Response](#response-2)
    5. [Show Tiered Credit Interest rates](#show-tiered-credit-interest-rates)
-      1. [Response](#response-3)
    6. [Show whole credit interest rates and relevant eligibility](#show-whole-credit-interest-rates-and-relevant-eligibility)
-      1. [Response](#response-4)
    7. [Represent graduate overdraft limits](#represent-graduate-overdraft-limits)
-      1. [Response](#response-5)
    8. [Represent overdrafts charged as tiered amount rates](#represent-overdrafts-charged-as-tiered-amount-rates)
-      1. [Response](#response-6)
    9. [Represent overdrafts charged as whole amount rates](#represent-overdrafts-charged-as-whole-amount-rates)
-      1. [Response](#response-7)
    10. [Represent overdrafts with periodic and per item fees with caps](#represent-overdrafts-with-periodic-and-per-item-fees-with-caps)
       1. [Represent unauthorised borrowing fees](#represent-unauthorised-borrowing-fees)
-         1. [Response](#response-8)
-      2. [Represent overdrafts with rate - like fees](#represent-overdrafts-with-rate---like-fees)
-      3. [Response](#response-9)
-   11. [Represent an overdraft “buffer amount”**](#represent-an-overdraft-buffer-amount)
-      1. [Response](#response-10)
-   12. [Represent “overdraft control” accounts](#represent-overdraft-control-accounts)
-      1. [Response](#response-11)
-   13. [Restrict who can apply for the account](#restrict-who-can-apply-for-the-account)
-      1. [Response](#response-12)
-   14. [Benefits packages](#benefits-packages)
-      1. [Response](#response-13)
-   15. [Publishing BackBook product](#publishing-backbook-product)
-      1. [Response](#response-14)
+      2. [Represent overdrafts with rate like fees](#represent-overdrafts-with-rate-like-fees)
+      3. [Represent an overdraft: buffer amount](#represent-an-overdraft-buffer-amount)
+      4. [Represent overdraft control accounts](#represent-overdraft-control-accounts)
+   11. [Restrict who can apply for the account](#restrict-who-can-apply-for-the-account)
+   12. [Benefits packages](#benefits-packages)
+   13. [Publishing BackBook product](#publishing-backbook-product)
 
 ## Version Control
 
@@ -191,7 +175,7 @@ Amendments for Back Book Products:
 The CreditInterestEligibility section is not needed for Back Book Products. A new constraint C41 (This section is not needed for Back Book Products) will be added into the Constraints Rule Book. C41 will be applied for CreditInterestEligibility.
 
 
-### Overdraft/Borrowing
+### Overdraft or Borrowing
 
 The Maximum Monthly Charge (MMC) focuses on fees and charges due to unauthorised borrowing. Price comparison websites are currently more focussed on details of arranged overdraft rates and accompanying fees and charges. There is also grey areas e.g. emergency borrowing which is a short term provision for situations where a customer has exceeded their arranged overdraft or authorised credit limit but only by a small amount and only for a short period.
 
@@ -257,25 +241,25 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[pca.2.4.0.DD.xlsx](/assets/pca/pca.2.4.0.DD.xlsx)
+[pca.2.4.0.dd.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.dd.xlsx)
 
 ### Swagger
 
 The API specification has beenwritten using the Swagger API specification format.
 
-[pca.2.4.0.swagger.json](./assets/pca/pca.2.4.0.swagger.json)
+[pca.2.4.0.swagger.json](/opendata-api-docs/assets/pca/pca.2.4.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[pca.2.4.0.Constraints.xlsx](/assets/pca/pca.2.4.0.Constraints.xlsx)
+[pca.2.4.0.constraints.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[pca.2.4.0.CodeLists.xlsx](/assets/pca/pca.2.4.0.CodeLists.xlsx)
+[pca.2.4.0.codelists.xlsx](/opendata-api-docs/assets/pca/pca.2.4.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -312,7 +296,7 @@ Before implementing the message standard, it is very useful browsing price compa
 
 Currently, price comparison websites have to obtain their PCA product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third-party providers to provide applications that could target particular consumer markets.
 
-### PCA v2.0 Top Level Design
+### PCA Top Level Design
 
 ![image2017-9-25_17-19-43.png](./images/image2017-9-25_17-19-43.png)
 
@@ -338,7 +322,7 @@ The Usage Examples are representative of different functional scenarios and are 
 For simplicity, some of the mandatory JSON elements may be skipped to keep the size of the response manageable for this document, to highlight only on the relevant items. For example, when we are giving an example of CreditInterest, then we might not show Overdraft and other json elements, to keep the JSON response size manageable.
 
 ### Common Request for Usage Examples
-#### Request
+**Request**
 
 ```json
 GET /personal-current-accounts HTTP/1.1
@@ -358,7 +342,7 @@ In the Switching example above, the Overdraft section would be filled out and th
 
 Within the FeatureBenefit section, the FeatureBenefitGroup/Type will be set to “AccountOpeningOrSwitchingIncentive” and the FeatureBenefitEligibility/Type will be set to “Switchers Only”.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1007,7 +991,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 Example: Santander’s [123 MINI CURRENT ACCOUNT](http://www.santander.co.uk/uk/current-accounts/123-mini-accounts/123-mini-current-account) has two products with the same Core Product Details, for different age range of young people, one for Under 11, and other 11-17 years, with the latter product having additional FeaturesAndBenefits.
 
  
-#### Response
+**Response**
  
 ```
 HTTP/1.1 200 OK
@@ -2062,7 +2046,7 @@ Example: [Nationwide FlexDirect](http://www.nationwide.co.uk/products/current-ac
 
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -2760,7 +2744,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 * 2.00% AER/1.98% gross (variable)on Balance of £200+
 * 3.00% AER/2.96% gross (variable)on Balance of £300 to £2,000
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3324,7 +3308,7 @@ Example - Bank of Scotland, Classic Vantage Account
 * Stay in credit (above £0) during the monthly billing period
 * Pay in at least two different Direct Debits from your account each calendar month
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3519,7 +3503,7 @@ If you’ve graduated within the last 3 years, you can apply for an overdraft of
 * 2nd year after graduation: Up to £2,000
 * 3rd year after graduation: Up to £1,000
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -3966,7 +3950,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 * The appropriate daily fees can be supplied in the OverdraftFeesCharges section: The daily fee will be stated in OverdraftFeeChargeDetail/FeeAmount field, and OverdraftFeeChargeDetail/CalculationFrequency should be set to “Daily”.
 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4156,7 +4140,7 @@ Fees for arranged overdrafts, 18.9% EAR variable.
 Representative example: If you use an arranged overdraft of £1,200 the interest rate we will charge you is 18.9% EAR (variable).
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4293,16 +4277,12 @@ Content-Type: application/prs.openbanking.opendata.v2.2
   ]
 }
 ``` 
- 
-
-
-
 
 ### Represent overdrafts with periodic and per item fees with caps 
 
 #### Represent unauthorised borrowing fees
 
- **Example** :  [Nationwide FlexDirect](http://www.nationwide.co.uk/~/media/MainSite/documents/products/current-accounts/shared/p7430-rate-and-charges.pdf)
+ **Example**:  [Nationwide FlexDirect](http://www.nationwide.co.uk/~/media/MainSite/documents/products/current-accounts/shared/p7430-rate-and-charges.pdf)
 
 <u>Daily arranged overdraft fee</u>: 50p per day (with £10 buffer amount)
 
@@ -4310,8 +4290,8 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 <u>Fee for a paid or unpaid transaction when you have insufficient funds</u>: £5 per transaction (capped at £15 per month)
 
- 
-##### Response
+
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4589,18 +4569,15 @@ Content-Type: application/prs.openbanking.opendata.v2.2
   ]
 }
 ``` 
- 
 
 
+#### Represent overdrafts with rate like fees
 
-
-#### Represent overdrafts with rate - like fees
-
- **Example** : [LBG Classic Account (post November 2017)](http://www.lloydsbank.com/current-accounts/overdraft-assessment/the-new-overdraft-fees.asp) 
+ Example: [LBG Classic Account (post November 2017)](http://www.lloydsbank.com/current-accounts/overdraft-assessment/the-new-overdraft-fees.asp) 
 
 Arranged Overdraft Fee: 1p charged per day per £7 overdrawn 
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4651,7 +4628,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
                                     "ApplicationFrequency": "Daily",
                                     "CalculationFrequency": "Daily",
                                     "Notes": [
-                                      "One Daily Overdraft Fee: You’ll pay a daily overdraft fee of 1p for every £7 you borrow. When calculating the daily overdraft fee, we will only use every full £7 you have borrowed, so if you borrow less than £7 you won’t be charged. Daily Charging Instead of paying all fees in one go each month, any fees will be charged at the end of each day you use your overdraft – so you’ll pay for what you borrow on the day you borrow it. This will help you keep track of how much your overdraft costs you. If you go over your limit \n So all your payments are made, it’s important you manage your account within your planned overdraft limit. If you don’t have enough money in your account or you reach your limit, you may not be able to make any more payments. If a payment takes you over your limit or we stop it, you won’t be charged."
+                      "One Daily Overdraft Fee: You’ll pay a daily overdraft fee of 1p for every £7 you borrow. When calculating the daily overdraft fee, we will only use every full £7 you have borrowed, so if you borrow less than £7 you won’t be charged. Daily Charging Instead of paying all fees in one go each month, any fees will be charged at the end of each day you use your overdraft – so you’ll pay for what you borrow on the day you borrow it. This will help you keep track of how much your overdraft costs you. If you go over your limit \n So all your payments are made, it’s important you manage your account within your planned overdraft limit. If you don’t have enough money in your account or you reach your limit, you may not be able to make any more payments. If a payment takes you over your limit or we stop it, you won’t be charged."
                                     ]
                                   }
                                 ]
@@ -4696,15 +4673,14 @@ Content-Type: application/prs.openbanking.opendata.v2.2
  
 
 
+#### Represent an overdraft: buffer amount
 
-
-### Represent an overdraft “buffer amount”** 
 
 ![image2017-9-25_12-15-35.png](./images/image2017-9-25_12-15-35.png)
 
 
 The diagram above represents the different “credit states” that a PCA can be in, for a sophisticated PCA product – [Barclay’s current account](http://www.barclays.co.uk/current-accounts/bank-charges/) . 
-The shaded portions show the “buffer amounts”, which allows an accountholder to exceed a particular credit limit by typically a small amount but be treated as though they’re still in the previous state.
+The shaded portions show the “buffer amounts”, which allows an accountholder to exceed a particular credit limit by typically a small amount but be treated as though they’re still in the previous state. 
 
 As shown, when an accountholder execeeds their positive balance, they would typically move in to either an arranged overdraft situation or unarranged borrowing. In either case, there may be an “Exceed Balance Buffer” that means that the account will be treated as though they are still in positive balance.
 
@@ -4717,12 +4693,14 @@ The size of the buffer amount can be represented in the OverdraftTierBandSet/Buf
 Additionally the “Exceed Balance Buffer” amount should also be added as an initial tier in the OverdraftTierBand section.
 
 
-**Example** : [Marks and Spencer Current Account Credit Overdraft Limits](https://openbanking.atlassian.net/wiki/bank.marksandspencer.com/pdf/CLSummaryBox.pdf)
-* Buffer Amount - £50 – fee free (Marks and Spencer definition for buffer amount provided at [https://bank.marksandspencer.com/pdf/CAOverdraftUpdate.pdf](https://bank.marksandspencer.com/pdf/CAOverdraftUpdate.pdf) equates to providng an “Exceed Balance Buffer” and an “Exceed Arranged Overdraft Buffer”)
+Example: [Marks and Spencer Current Account Credit Overdraft Limits](https://bank.marksandspencer.com/current-accounts/mands-current-account/)
+
+* Buffer Amount - £50 – fee free (Marks and Spencer definition for buffer amount provided at [https://bank.marksandspencer.com/current-accounts/mands-current-account/](https://bank.marksandspencer.com/current-accounts/mands-current-account/) equates to providng an “Exceed Balance Buffer” and an “Exceed Arranged Overdraft Buffer”)
 * 0 to £100 (including buffer – effectively 50 to 100) – No overdraft interest
 * Above £100 - 15.9% variable.
 
-#### Response
+
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -4840,7 +4818,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 ``` 
  
 
-### Represent “overdraft control” accounts
+#### Represent overdraft control accounts
 
 Examples: [Barclays Control Feature](https://www.barclays.co.uk/current-accounts/customise-my-account/control-feature/) with Barclays bank account with Emergency Borrowing.
 
@@ -4856,7 +4834,7 @@ If the Control Feature stops an unpaid transaction fee, you'll still be charged 
 
 To represent control features, ASPSPs must add a OverdraftControl type FeatureBenefitItem, in the FeaturesAndBenefits set.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -5122,7 +5100,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Restrict who can apply for the account
 
- **Example** : [HSBC Bank Account](https://www.hsbc.co.uk/1/2/current-accounts/bank-account)
+Example: [HSBC Bank Account](https://www.hsbc.co.uk/1/2/current-accounts/bank-account)
 
 Eligibility requirements
 * You must be able to provide us with certified proof of your identity and address (translated into English if appropriate)
@@ -5131,7 +5109,8 @@ Eligibility requirements
 * You need to be 18 years or older
 * Your residential address must be within the EU
 
-#### Response
+
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -5227,14 +5206,14 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Benefits packages
 
- **Example** : [NatWest Reward Silver Account](http://personal.natwest.com/personal/current-accounts/compare-current-accounts/reward-silver-account.html)
+Example: [NatWest Reward Silver Account](http://personal.natwest.com/personal/current-accounts/compare-current-accounts/reward-silver-account.html)
 
 Lifestyle benefits and Rewards. £12 a month.
 
 European travel insurance, mobile phone insurance, Rewards on 7 types of household bills paid by Direct Debit, ticket booking Service, tastecard, travel money    
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -5603,7 +5582,7 @@ Example - Bank of Scotland, Classic Vantage Account
 
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

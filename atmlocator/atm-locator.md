@@ -9,12 +9,11 @@
    1. [Purpose](#purpose)
    2. [Format Notation](#format-notation)
    3. [Implementation Notes](#implementation-notes)
-5. [ATM v2.3 Top Level Design](#atm-v23-top-level-design)
+5. [ATM Top Level Design](#atm-top-level-design)
 6. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
-   2. [ATM Sample implementation – HSBC bank ATM at DE7 8DD](#atm-sample-implementation--hsbc-bank-atm-at-de7-8dd)
-      1. [Response](#response)
+   2. [Sample implementation HSBC Bank ATM at DE78DD](#sample-implementation-hsbc-bank-atm-at-de78dd)
+
 
 ## Version Control
 
@@ -68,13 +67,13 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed description for each fields in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[atml.2.3.0.tabbeddd.xlsx](/assets/atmlocator/atml.2.3.0.tabbeddd.xlsx)
+[atml.2.3.0.tabbeddd.xlsx](/opendata-api-docs/assets/atmlocator/atml.2.3.0.tabbeddd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[atml.2.3.0.swagger.json](/assets/atmlocator//atml.2.3.0.swagger.json)
+[atml.2.3.0.swagger.json](/opendata-api-docs/assets/atmlocator/atml.2.3.0.swagger.json)
 
 ## Message Implementation Guide
 
@@ -100,7 +99,8 @@ Where there are multiple records for a particular field, we depict this as `[<re
 
 Before implementing the message standard, it is useful browsing current ATM Locator websites e.g. [Link ATM Locator](http://www.link.co.uk/atm-locator/), [Visa ATM Locator](http://www.visa.com/atmlocator/index.jsp) and [Mastercard](https://www.mastercard.us/en-us/consumers/get-support/locate-an-atm.html) , along with the ATM Locator webpages provided by your own organisation, in order to get a feel as to why you need to supply this information.
 
-## ATM v2.3 Top Level Design
+
+## ATM Top Level Design
 
 ![atmlocatortopteveldesign.png]( ./images/atmlocatortopteveldesign.png)
 
@@ -112,16 +112,16 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```json
 GET /atms HTTP/1.1
 Accept: application/json
 ```
 
-### ATM Sample implementation – HSBC bank ATM at DE7 8DD
+### Sample implementation HSBC Bank ATM at DE78DD
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

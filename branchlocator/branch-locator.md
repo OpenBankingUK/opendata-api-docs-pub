@@ -4,20 +4,17 @@
 2. [Overview](#overview)
    1. [Postal Address](#postal-address)
    2. [Mobile branch addresses](#mobile-branch-addresses)
-   3. [Services and Facilities/Other Services and Facilities](#services-and-facilitiesother-services-and-facilities)
-   4. [Accessibility/Other Accessibility](#accessibilityother-accessibility)
+   3. [Services and Facilities and Other Services and Facilities](#services-and-facilities-and-other-services-and-facilities)
+   4. [Accessibility and Other Accessibility](#accessibility-and-other-accessibility)
    5. [Availability](#availability)
 3. [Specification](#specification)
    1. [Data Dictionary](#data-dictionary)
    2. [Swagger](#swagger)
-4. [Branches v2.3 Top Level Design](#branches-v23-top-level-design)
+4. [Branch Top Level Design](#branch-top-level-design)
 5. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
    2. [Branch Sample implementation Lloyds Bank physical branch](#branch-sample-implementation-lloyds-bank-physical-branch)
-      1. [Response](#response)
    3. [Branch Sample implementation Lloyds Bank Barnstable Mobile Branch](#branch-sample-implementation-lloyds-bank-barnstable-mobile-branch)
-      1. [Response](#response-1)
 
 ## Version Control
 
@@ -55,11 +52,11 @@ This is where the Branch is located and is a mixture of a postal address and the
 
 Mobile branch specific attributes such as parking location and stop name can be added as a 0..7 free format AddressLine fields
 
-### Services and Facilities/Other Services and Facilities
+### Services and Facilities and Other Services and Facilities
 
 This allows the implementer to choose from standard services/facilities e.g. Parking and also allows the specification of other services/facilties using the OtherServiceFacility code block, where these are proprietary or currently missing from the standard code list. Periodic review of OtherServiceFacility information provided by each bank will allow us to decide if any of that information should be subsequently added to the standard code list.
 
-### Accessibility/Other Accessibility
+### Accessibility and Other Accessibility
 
 This allows you to specify accessibility features of the branch e.g. Wheelchair access, and also allows specification of OtherAccessibility features, where these are proprietary or currently missing from the standard code list.
 
@@ -77,15 +74,15 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[bral.2.3.0.TabbedDD.xlsx](/assets/branchlocator/bral.2.3.0.dd.xlsx )
+[bral.2.3.0.dd.xlsx](/opendata-api-docs/assets/branchlocator/bral.2.3.0.dd.xlsx )
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[bral.2.3.0.swagger.json](/assets/branchlocator/bral.2.3.0.swagger.json )
+[bral.2.3.0.swagger.json](/opendata-api-docs/assets/branchlocator//bral.2.3.0.swagger.json )
 
-## Branches v2.3 Top Level Design
+## Branch Top Level Design
 
 ![BranchLocationImplementationpage.png](./images/branch-location-lmplementationpage.png)
 
@@ -96,7 +93,7 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```
 GET /branches HTTP/1.1
@@ -104,7 +101,7 @@ GET /branches HTTP/1.1
 
 ### Branch Sample implementation Lloyds Bank physical branch
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -240,7 +237,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Branch Sample implementation Lloyds Bank Barnstable Mobile Branch
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

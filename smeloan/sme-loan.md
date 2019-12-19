@@ -1,3 +1,6 @@
+---
+next: false
+---
 # SME Loan API Specification <!-- omit in toc -->
 
 1. [Version Control](#version-control)
@@ -19,24 +22,16 @@
    1. [Purpose](#purpose)
    2. [Format Notation](#format-notation)
    3. [Implementation Notes](#implementation-notes)
-6. [SME Loan v2.2 Top Level Design](#sme-loan-v22-top-level-design)
+6. [SME Loan Top Level Design](#sme-loan-top-level-design)
 7. [Usage Examples](#usage-examples)
    1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-      1. [Request](#request)
    2. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
-      1. [Response](#response)
    3. [Publish Whole Interest Tier With an Arrangement Fee](#publish-whole-interest-tier-with-an-arrangement-fee)
-      1. [Response](#response-1)
    4. [Publish Tiered APR and Tiered Arrangement Fee](#publish-tiered-apr-and-tiered-arrangement-fee)
-      1. [Response](#response-2)
    5. [Early Payments or Overpay the Loan](#early-payments-or-overpay-the-loan)
-      1. [Response](#response-3)
    6. [Early Repayment of Loan](#early-repayment-of-loan)
-      1. [Response](#response-4)
-   7. [Restrict Eligibility - Who Can Apply for the Account](#restrict-eligibility---who-can-apply-for-the-account)
-      1. [Response](#response-5)
+   7. [Restrict Eligibility Who Can Apply for the Account](#restrict-eligibility-who-can-apply-for-the-account)
    8. [Other Fees And Charges](#other-fees-and-charges)
-      1. [Response](#response-6)
 
 ## Version Control
 
@@ -47,7 +42,6 @@
 | 2.2.0 |26 Feb 2018 |Open Banking Open Data API Team |This release incorporates all known issues with 2.0.0 up to Feb 2018. Please see the release notes for details. |
 | 2.3.0 |28 Mar 2019 |Open Banking Open Data API Team |V2.3.0 Changes: Added OtherSegment block Updated the SMELoan/Identification field length to Max40Text Fixed language issue Added constraint C51 "Fee Free Length Period should be mandatory if Fee Free Length populated." |
 | 2.3.1 |02 Aug 2019 |Open Banking Open Data API Team |V.3.0 Erata change: Fixed the missing enumeration values for FixedVariableInterestRateType field. |
-
 
 
 ## Overview
@@ -167,25 +161,25 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[smel.2.3.0.DD.xlsx](/assets/smeloan/smel.2.3.0.DD.xlsx)
+[smel.2.3.0.DD.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.dd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[smel.2.3.0.swagger.json](/assets/smeloan/smel.2.3.0.swagger.json)
+[smel.2.3.0.swagger.json](/opendata-api-docs/assets/smeloan/smel.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[smel.2.3.0.Constraints.xlsx](/assets/smeloan/smel.2.3.0.Constraints.xlsx)
+[smel.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/smeloan/smel.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[smel.2.3.0.codelists.xlsx ](/assets/smeloan/smel.2.3.0.codelists.xlsx)
+[smel.2.3.0.codelists.xlsx ](/opendata-api-docs/assets/smeloan/smel.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -215,7 +209,7 @@ Before implementing the message standard, it is very useful browsing the current
 Currently, price comparison websites have to obtain their  SME Loan product data either via bank proprietary APIs, via information collected by dedicated data capture agencies or via "screen scraping" (i.e. capturing product web page information and writing scripts to extract relevant data). This work is complex and prone to error, so having a standard API would make the data capture side much easier and allow more third party providers to provide applications that could target particular consumer markets.
 
 
-## SME Loan v2.2 Top Level Design
+## SME Loan Top Level Design
 
 ![ image2017-9-27_11-14-7.png ](./images/image2017-9-27_11-14-7.png)
 
@@ -228,7 +222,7 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```json
 GET /unsecured-sme-loans HTTP/1.1
@@ -240,7 +234,7 @@ Example: [Lloyds Base Rate Loan](http://www.lloydsbank.com/business/retail-busin
 
 Sample JSON Response snippet, shows the SMELoanMarketingState, which is a variable product detail, while CoreProduct element holds the fixed information.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -900,11 +894,11 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 ### Publish Whole Interest Tier With an Arrangement Fee 
 
-Example: <a href="http://www.business.hsbc.uk/en-gb/finance-and-borrowing/credit-and-lending/small-business-loan" class="external-link" rel="nofollow">HSBC Small Business Loan</a>
+Example: [HSBC Small Business Loan](http://www.business.hsbc.uk/en-gb/finance-and-borrowing/credit-and-lending/small-business-loan)
 
-7.4 fixed Representative APR, on a loan of value between £1000 to £25000, with £100 arrangement fee collected up-front.
+Fixed 7.4 Representative APR, on a loan of value between £1000 to £25000, with £100 arrangement fee collected up-front.
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1116,7 +1110,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 Example: [Lloyds Base Rate Loan]( http://www.lloydsbank.com/business/retail-business/loans-and-financing/loans/base-rate-business-loan.asp?WT.ac=RBB_Loans_Base_FOM#tab-row-3)
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1311,7 +1305,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 Madeup data with base example from old [HSBC Flexible Business Loan](https://www.business.hsbc.uk/en-gb/finance-and-borrowing/credit-and-lending/flexible-business-loan) product and new [Small Business Loan](http://www.business.hsbc.uk/en-gb/finance-and-borrowing/credit-and-lending/small-business-loan) product.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1485,7 +1479,7 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 
 Same HSBC Example as above with Early Repayment charges than PrePayment
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1582,21 +1576,13 @@ Content-Type: application/prs.openbanking.opendata.v2.2
 }
 ``` 
 
-### Restrict Eligibility - Who Can Apply for the Account
-
-Made-up example on top of RBS Business Loan
-
-[https://www.business.rbs.co.uk/business/business-lending-at-royal-bank/applying-online-sole-trader.html](https://www.business.rbs.co.uk/business/business-lending-at-royal-bank/applying-online-sole-trader.html)
-
-
 Eligibility requirements
 
   * Require the loan for business use
   * Be a sole trader, partner or director with authority to borrow on behalf of your business
   * Be aged 18 or over
-  * You are not currently declared as bankrupt, received a County Court Judgement (CCJ) or Court Decree.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -1727,7 +1713,7 @@ Made up data from HSBC Small Business Loan, and follows GOV.UK : Late commercial
 
 LatePayment and MissedPaymentFee go in OtherFeesCharges.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

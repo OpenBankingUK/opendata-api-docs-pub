@@ -6,7 +6,7 @@
 	1. [MarketingState](#marketingstate)
 	2. [Core Product](#core-product)
 	3. [Repayment](#repayment)
-	4. [Other Fees &amp; Charges](#other-fees-amp-charges)
+	4. [Other Fees and Charges](#other-fees-and-charges)
 	5. [Eligibility](#eligibility)
 	6. [Features and Benefits](#features-and-benefits)
 4. [Specification](#specification)
@@ -20,21 +20,13 @@
 	3. [CCC Top Level Design](#ccc-top-level-design)
 6. [Usage Examples](#usage-examples)
 	1. [Common Request for Usage Examples](#common-request-for-usage-examples)
-		1. [Request](#request)
 	2. [Supply Fixed and Variable Core Product Details](#supply-fixed-and-variable-core-product-details)
-		1. [Response](#response)
 	3. [Introductory and Balance Transfer Offer](#introductory-and-balance-transfer-offer)
-		1. [Response](#response-1)
 	4. [Specify Minimum Payment Required Against an Account](#specify-minimum-payment-required-against-an-account)
-		1. [Response](#response-2)
 	5. [Represent Repayment Charges](#represent-repayment-charges)
-		1. [Response](#response-3)
 	6. [Other Fees And Charges](#other-fees-and-charges)
-		1. [Response](#response-4)
 	7. [Restrict Account Applicants](#restrict-account-applicants)
-		1. [Response](#response-5)
 	8. [Benefits Packages](#benefits-packages)
-		1. [Response](#response-6)
 
 ## Version Control
 
@@ -178,7 +170,7 @@ Examples
 
 Use the notes field to indicate what balance type you are allocating the fee to, as well as, indicating how interest is charged on the fee.
 
-### Other Fees &amp; Charges 
+### Other Fees and Charges 
 
 Key Fees and Charges that a customer has to pay can be specified in the Core Product, Repayment and Features and Benefits sections (see above).
 The long tail of additional fees and charges that are not associated any of the above areas can be specified in this section.
@@ -220,25 +212,25 @@ The following UML Class Diagram provides the hierarchical structure of the messa
 
 Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.
 
-[ccc.2.3.0.DD.xlsx](/assets/smeccc/ccc.2.3.0.DD.xlsx)
+[ccc.2.3.0.dd.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.dd.xlsx)
 
 ### Swagger
 
 The API specification written using the Swagger API specification format.
 
-[ccc.2.3.0.swagger.json](/assets/smeccc/ccc.2.3.0.swagger.json)
+[ccc.2.3.0.swagger.json](/opendata-api-docs/assets/smeccc/ccc.2.3.0.swagger.json)
 
 ### Constraints Rule Book
 
 Provides conditional rules which applies to a section or field(s) in the API specification. This file should always be read along with Data Dictionary File.
 
-[ccc.2.3.0.Constraints.xlsx](/assets/smeccc/ccc.2.3.0.constraints.xlsx)
+[ccc.2.3.0.Constraints.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.constraints.xlsx)
 
 ### CodeList
 
 List of enumeration values which have been used in the API Specification.
 
-[ccc.2.3.0.codelists.xlsx](/assets/smeccc/ccc.2.3.0.codelists.xlsx)
+[ccc.2.3.0.codelists.xlsx](/opendata-api-docs/assets/smeccc/ccc.2.3.0.codelists.xlsx)
 
 ## Message Implementation Guide
 
@@ -276,7 +268,7 @@ For simplicity, some of the mandatory JSON elements may be skipped to keep the s
 
 ### Common Request for Usage Examples
 
-#### Request
+**Request**
 
 ```json
 GET /commercial-credit-cards HTTP/1.1
@@ -286,7 +278,7 @@ GET /commercial-credit-cards HTTP/1.1
 
 Example: A fictional example based on the [HSBC Business Credit Card](http://www.business.hsbc.uk/en-gb/finance-and-borrowing/business-card/business-credit-card?DCSext.nav=foot-mat)
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -372,7 +364,7 @@ We use the StateTenureLength and StateTenurePeriod to indicate the period of tim
 
 We use the FirstMarketedState and LastMarketedState to indicate the period of time during which a complete set of offerings is advertised.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -455,7 +447,7 @@ The sum of:
 1. It is an industry standard that interest and any fees and charges have to be paid off, and that the minimum payment will either be the outstanding balance or the maximum of a specified rate or minimum payment amount, but this can be specified in the notes, as in the example above.
 
  
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -511,7 +503,7 @@ Late Payment: £12
 
 Returned Payment: £5
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -585,7 +577,7 @@ Cash Advances: 15.9% variable, handling fee 1% (minimum £3)
 
 Non-Sterling Transaction Fee: 2.99%
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -658,7 +650,7 @@ Content-Type: application/prs.openbanking.opendata.v2.4
 
 ### Restrict Account Applicants
 
-**Example** : A fictional example based on theSantander Business Credit Card
+**Example** : A fictional example based on the [Santander Business Credit Card](https://www.santander.co.uk/business/borrowing-and-finance/credit-cards)
 
 You can apply for a credit card if:-
 
@@ -667,7 +659,7 @@ You can apply for a credit card if:-
 * Have a good credit record and have not been declared bankrupt, had a CCJ or an IVA within the last 6 years.
 * You must agree to a credit check as part of the application and this will determine whether or not you're accepted and the credit limit that we can offer.
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK
@@ -742,7 +734,7 @@ Content-Type: application/prs.openbanking.opendata.v2.4
 
 * Event tickets from Barclays Entertainment
 
-#### Response
+**Response**
 
 ```
 HTTP/1.1 200 OK

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Branch Locator API Specification</title>
+    <meta name="description" content="OBIE Read/Write API Standards">
+    <link,[object Object] 0="link" 1="[object Object]"></link,[object Object]>
+    
+    <link rel="preload" href="/opendata-api-docs-pub/assets/css/0.styles.f7eb6825.css" as="style"><link rel="preload" href="/opendata-api-docs-pub/assets/js/app.ec1d90ce.js" as="script"><link rel="preload" href="/opendata-api-docs-pub/assets/js/2.6bd19987.js" as="script"><link rel="preload" href="/opendata-api-docs-pub/assets/js/7.94a9e6aa.js" as="script"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/10.b0235075.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/11.52c837c3.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/12.8202df2f.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/13.ee1dca0b.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/3.bf2e4ae4.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/4.5d8938a3.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/5.9ebd5fad.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/6.d6cfc433.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/8.5a8631f0.js"><link rel="prefetch" href="/opendata-api-docs-pub/assets/js/9.a505c4b3.js">
+    <link rel="stylesheet" href="/opendata-api-docs-pub/assets/css/0.styles.f7eb6825.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/opendata-api-docs-pub/" class="home-link router-link-active"><img src="/opendata-api-docs-pub/assets/img/logo-dark.svg" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://standards.openbanking.org.uk/api-specifications/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  API Specifications
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://standards.openbanking.org.uk/security-profiles/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Security Profiles
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://standards.openbanking.org.uk/customer-experience-guidelines/introduction/section-a/latest/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Customer Experience Guidelines
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://standards.openbanking.org.uk/operational-guidelines/introduction/latest/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Operational Guidelines
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://openbankinguk.github.io/knowledge-base-pub/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  FAQs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://standards.openbanking.org.uk/api-specifications/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  API Specifications
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://standards.openbanking.org.uk/security-profiles/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Security Profiles
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://standards.openbanking.org.uk/customer-experience-guidelines/introduction/section-a/latest/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Customer Experience Guidelines
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://standards.openbanking.org.uk/operational-guidelines/introduction/latest/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Operational Guidelines
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://openbankinguk.github.io/knowledge-base-pub/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  FAQs
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/opendata-api-docs-pub/v2.4.0/" class="sidebar-heading clickable router-link-active open"><span>Version 2.4.0</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/opendata-api-docs-pub/v2.4.0/atmlocator/atm-locator.html" class="sidebar-link">ATM Locator</a></li><li><a href="/opendata-api-docs-pub/v2.4.0/branchlocator/branch-locator.html" class="active sidebar-link">Branch Locator</a></li><li><a href="/opendata-api-docs-pub/v2.4.0/pca/personal-current-account.html" class="sidebar-link">Personal Current Accounts</a></li><li><a href="/opendata-api-docs-pub/v2.4.0/bca/business-current-account.html" class="sidebar-link">Business Current Accounts</a></li><li><a href="/opendata-api-docs-pub/v2.4.0/smeccc/sme-commercial-credit-card.html" class="sidebar-link">SME Commercial Credit Card</a></li><li><a href="/opendata-api-docs-pub/v2.4.0/smeloan/sme-loan.html" class="sidebar-link">SME Loan</a></li></ul></section></li><li><a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1103233381/Open+Data+API+Specifications+v2.3" target="_blank" rel="noopener noreferrer" class="sidebar-link">Version 2.3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1>Branch Locator API Specification </h1> <ol><li><a href="#version-control">Version Control</a></li> <li><a href="#overview">Overview</a> <ol><li><a href="#postal-address">Postal Address</a></li> <li><a href="#mobile-branch-addresses">Mobile branch addresses</a></li> <li><a href="#services-and-facilities-and-other-services-and-facilities">Services and Facilities and Other Services and Facilities</a></li> <li><a href="#accessibility-and-other-accessibility">Accessibility and Other Accessibility</a></li> <li><a href="#availability">Availability</a></li></ol></li> <li><a href="#specification">Specification</a> <ol><li><a href="#data-dictionary">Data Dictionary</a></li> <li><a href="#swagger">Swagger</a></li></ol></li> <li><a href="#branch-top-level-design">Branch Top Level Design</a></li> <li><a href="#usage-examples">Usage Examples</a> <ol><li><a href="#common-request-for-usage-examples">Common Request for Usage Examples</a></li> <li><a href="#branch-sample-implementation-lloyds-bank-physical-branch">Branch Sample implementation Lloyds Bank physical branch</a></li> <li><a href="#branch-sample-implementation-lloyds-bank-barnstable-mobile-branch">Branch Sample implementation Lloyds Bank Barnstable Mobile Branch</a></li></ol></li></ol> <h2 id="version-control"><a href="#version-control" aria-hidden="true" class="header-anchor">#</a> Version Control</h2> <table><thead><tr><th>Version</th> <th>Date</th> <th>Author</th> <th>Comments</th></tr></thead> <tbody><tr><td>2.0.0</td> <td>18 Jul 2017</td> <td>Open Banking Open Data API Team</td> <td>This is the baseline version.</td></tr> <tr><td>2.1.0</td> <td>22 Aug 2017</td> <td>Open Banking Open Data API Team</td> <td>This release incorporates all known issues with 2.0.0 up to 18 Aug 2017. Please see the release notes for details.</td></tr> <tr><td>2.2.0</td> <td>26 Feb 2018</td> <td>Open Banking Open Data API Team</td> <td>This release incorporates all known issues with 2.1.1 up to Feb 2018. Please see the release notes for details.</td></tr> <tr><td>2.3.0 RC1</td> <td>18 Feb 2019</td> <td>Open Banking Open Data API Team</td> <td>V2.3.0 RC1 Changes: Updated the cardinality of NonStandardAvailibility from 0..1 to 0..unbounded Spelling error fix</td></tr></tbody></table> <h2 id="overview"><a href="#overview" aria-hidden="true" class="header-anchor">#</a> Overview</h2> <p>This specification includes all relevant artefacts for the Open Data Branch API Specification.</p> <p>This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple branches.</p> <p>A branch is made up of:-</p> <ul><li>Identification - unique identification for the branch</li> <li>SequenceNumber - 0 indicates that this is a main branch, 1..n indicates that it's either a sub or mobile branch.</li> <li>Name - the branch name</li> <li>Type - Physical or Mobile</li> <li>CustomerSegment - The segment of customers that the branch serves e.g. Private, Retail, Business</li> <li>Photo - you can supply a URL showing an image of the branch e.g. use Google streetview</li> <li>Sort-Code(s) associated with branch</li> <li>Service/Facility (see subsection below)</li> <li>Accessibility (see subsection below)</li> <li>Postal Address (see subsection below)</li></ul> <h3 id="postal-address"><a href="#postal-address" aria-hidden="true" class="header-anchor">#</a> Postal Address</h3> <p>This is where the Branch is located and is a mixture of a postal address and the geographic coordinates (decimal Latitude and Longitude). For geolocation purposes, it is highly recommended that each branch is identified via the geographic coordinates.</p> <h3 id="mobile-branch-addresses"><a href="#mobile-branch-addresses" aria-hidden="true" class="header-anchor">#</a> Mobile branch addresses</h3> <p>Mobile branch specific attributes such as parking location and stop name can be added as a 0..7 free format AddressLine fields</p> <h3 id="services-and-facilities-and-other-services-and-facilities"><a href="#services-and-facilities-and-other-services-and-facilities" aria-hidden="true" class="header-anchor">#</a> Services and Facilities and Other Services and Facilities</h3> <p>This allows the implementer to choose from standard services/facilities e.g. Parking and also allows the specification of other services/facilties using the OtherServiceFacility code block, where these are proprietary or currently missing from the standard code list. Periodic review of OtherServiceFacility information provided by each bank will allow us to decide if any of that information should be subsequently added to the standard code list.</p> <h3 id="accessibility-and-other-accessibility"><a href="#accessibility-and-other-accessibility" aria-hidden="true" class="header-anchor">#</a> Accessibility and Other Accessibility</h3> <p>This allows you to specify accessibility features of the branch e.g. Wheelchair access, and also allows specification of OtherAccessibility features, where these are proprietary or currently missing from the standard code list.</p> <h3 id="availability"><a href="#availability" aria-hidden="true" class="header-anchor">#</a> Availability</h3> <p>Deals with standard and non-standard e.g. seasonal opening days and times.</p> <h2 id="specification"><a href="#specification" aria-hidden="true" class="header-anchor">#</a> Specification</h2> <p>The following UML Class Diagram provides the hierarchical structure of the message in a graphical form, which is easier to digest.</p> <p><img src="/opendata-api-docs-pub/assets/img/bral.2.3.0.class-diagram.5617ea98.png" alt="bral.2.3.0.ClassDiagram.png"></p> <h3 id="data-dictionary"><a href="#data-dictionary" aria-hidden="true" class="header-anchor">#</a> Data Dictionary</h3> <p>Provides detailed descriptions for each field in the message specification along with the associated code lists, constraints and other technical details such as cardinality, any pattern constraints, min, max length etc.</p> <p><a href="/opendata-api-docs-pub/assets/branchlocator/bral.2.3.0.dd.xlsx">bral.2.3.0.dd.xlsx</a></p> <h3 id="swagger"><a href="#swagger" aria-hidden="true" class="header-anchor">#</a> Swagger</h3> <p>The API specification written using the Swagger API specification format.</p> <p><a href="/opendata-api-docs-pub/assets/branchlocator//bral.2.3.0.swagger.json">bral.2.3.0.swagger.json</a></p> <h2 id="branch-top-level-design"><a href="#branch-top-level-design" aria-hidden="true" class="header-anchor">#</a> Branch Top Level Design</h2> <p><img src="/opendata-api-docs-pub/assets/img/branch-location-lmplementationpage.6e24065f.png" alt="BranchLocationImplementationpage.png"></p> <h2 id="usage-examples"><a href="#usage-examples" aria-hidden="true" class="header-anchor">#</a> Usage Examples</h2> <p>The Usage Examples are representative of different functional scenarios and are given in JSON format.
+For simplicity, some of the mandatory JSON elements may be skipped to keep the size of the response manageable for this document, to highlight only on the relevant items. For example, when we are giving example of CreditInterest, then we might not show Overdraft and other json elements, to keep the JSON response size manageable.</p> <h3 id="common-request-for-usage-examples"><a href="#common-request-for-usage-examples" aria-hidden="true" class="header-anchor">#</a> Common Request for Usage Examples</h3> <p><strong>Request</strong></p> <div class="language- extra-class"><pre class="language-text"><code>GET /branches HTTP/1.1
+</code></pre></div><h3 id="branch-sample-implementation-lloyds-bank-physical-branch"><a href="#branch-sample-implementation-lloyds-bank-physical-branch" aria-hidden="true" class="header-anchor">#</a> Branch Sample implementation Lloyds Bank physical branch</h3> <p><strong>Response</strong></p> <div class="language- extra-class"><pre class="language-text"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Type: application/prs.openbanking.opendata.v2.2
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;Brand&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;BrandName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lloyds Bank&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Branch&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;Identification&quot;</span><span class="token operator">:</span> <span class="token string">&quot;77720400&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;SequenceNumber&quot;</span><span class="token operator">:</span> <span class="token string">&quot;00&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BOURNE&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Physical&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;CustomerSegment&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;Personal&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Business&quot;</span>
+             <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Accessibility&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;WheelchairAccess&quot;</span>
+             <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;OtherServiceAndFacility&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  <span class="token property">&quot;Code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ATMB&quot;</span><span class="token punctuation">,</span>
+                  <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ATMAtBranch&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                  <span class="token property">&quot;Code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;SCTY&quot;</span><span class="token punctuation">,</span>
+                  <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;SafeCustody&quot;</span>
+                <span class="token punctuation">}</span>
+             <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Availability&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;StandardAvailability&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                  <span class="token property">&quot;Day&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Monday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;09:00:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;16:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Tuesday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;09:00:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;16:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Wednesday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;09:30:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;16:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Thursday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;09:00:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;16:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Friday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;09:00:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;16:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Saturday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;09:00:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;13:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span>
+                 <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;ContactInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  <span class="token property">&quot;ContactType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Phone&quot;</span><span class="token punctuation">,</span>
+                  <span class="token property">&quot;ContactContent&quot;</span><span class="token operator">:</span> <span class="token string">&quot;+44-3453000000&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                  <span class="token property">&quot;ContactType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Fax&quot;</span><span class="token punctuation">,</span>
+                  <span class="token property">&quot;ContactContent&quot;</span><span class="token operator">:</span> <span class="token string">&quot;+44-1245704705&quot;</span>
+                <span class="token punctuation">}</span>
+             <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;PostalAddress&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;AddressLine&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token string">&quot;LLOYDS BRANCH 8 NORTH STREET&quot;</span>
+               <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;TownName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BOURNE&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;CountrySubDivision&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token string">&quot;LINCOLNSHIRE&quot;</span>
+               <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;Country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GB&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;PostCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PE10 9ED&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;GeoLocation&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                  <span class="token property">&quot;GeographicCoordinates&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;Latitude&quot;</span><span class="token operator">:</span> <span class="token string">&quot;52.768482&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;Longitude&quot;</span><span class="token operator">:</span> <span class="token string">&quot;-0.37696&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+         <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+     <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="branch-sample-implementation-lloyds-bank-barnstable-mobile-branch"><a href="#branch-sample-implementation-lloyds-bank-barnstable-mobile-branch" aria-hidden="true" class="header-anchor">#</a> Branch Sample implementation Lloyds Bank Barnstable Mobile Branch</h3> <p><strong>Response</strong></p> <div class="language- extra-class"><pre class="language-text"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Type: application/prs.openbanking.opendata.v2.2
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;Brand&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;BrandName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lloyds Bank&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;Branch&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;Identification&quot;</span><span class="token operator">:</span> <span class="token string">&quot;30904904&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;SequenceNumber&quot;</span><span class="token operator">:</span> <span class="token string">&quot;04&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Barnstable Mobile Branch&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Mobile&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;CustomerSegment&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;Personal&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;Business&quot;</span>
+             <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;Availability&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;StandardAvailability&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                  <span class="token property">&quot;Day&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                      <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Wednesday&quot;</span><span class="token punctuation">,</span>
+                      <span class="token property">&quot;OpeningHours&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                          <span class="token property">&quot;OpeningTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;13:00:00+0000&quot;</span><span class="token punctuation">,</span>
+                          <span class="token property">&quot;ClosingTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;15:00:00+0000&quot;</span>
+                        <span class="token punctuation">}</span>
+                     <span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span>
+                 <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;ContactInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  <span class="token property">&quot;ContactType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Phone&quot;</span><span class="token punctuation">,</span>
+                  <span class="token property">&quot;ContactContent&quot;</span><span class="token operator">:</span> <span class="token string">&quot;+44-3453000000&quot;</span>
+                <span class="token punctuation">}</span>
+             <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;PostalAddress&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;AddressLine&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token string">&quot;Combe Martin&quot;</span><span class="token punctuation">,</span>
+                  <span class="token string">&quot;Coach Car Park adjacent to The Pack of Cards&quot;</span>
+               <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;Country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GB&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;PostCode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EX34 0ET&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;GeoLocation&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                  <span class="token property">&quot;GeographicCoordinates&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;Latitude&quot;</span><span class="token operator">:</span> <span class="token string">&quot;51.202105&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;Longitude&quot;</span><span class="token operator">:</span> <span class="token string">&quot;-4.029046&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+         <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+     <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/opendata-api-docs-pub/v2.4.0/atmlocator/atm-locator.html" class="prev">ATM Locator</a></span> <span class="next"><a href="/opendata-api-docs-pub/v2.4.0/pca/personal-current-account.html">Personal Current Accounts</a>→
+    </span></p></div> </main> <div class="footer-wrapper"><footer class="page-edit footer"><div class="footer-navigation"><ul><li><a href="https://www.openbanking.org.uk/about-us/">About Us</a></li> <li><a href="https://www.openbanking.org.uk/">Customers</a></li> <li><a href="https://www.openbanking.org.uk/providers/">Providers</a></li> <li><a href="https://www.openbanking.org.uk/contact-us/">Contact Us</a></li> <li><a href="https://www.openbanking.org.uk/terms-conditions/">Terms and Conditions</a></li> <li><a href="https://www.openbanking.org.uk/privacy-policy/">Privacy Policy</a></li> <li><a href="https://www.openbanking.org.uk/cookies/">Cookies</a></li> <li><a href="https://www.openbanking.org.uk/accessibility/">Accessibility</a></li> <li><a href="https://www.openbanking.org.uk/open-licence/">Open Licence</a></li></ul></div> <div class="footer-info"><p>© Copyright Open Banking Limited 2019.</p> <p>Registered in England. Company Number: 10440081</p> <p>Registered office: 2 Thomas More Square, London E1W 1YN United Kingdom</p></div></footer></div></div><div class="global-ui"><!----></div></div>
+    <script src="/opendata-api-docs-pub/assets/js/app.ec1d90ce.js" defer></script><script src="/opendata-api-docs-pub/assets/js/2.6bd19987.js" defer></script><script src="/opendata-api-docs-pub/assets/js/7.94a9e6aa.js" defer></script>
+  </body>
+</html>
